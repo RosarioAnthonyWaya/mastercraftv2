@@ -1,0 +1,14 @@
+# ─────────────────────────────────────────
+# Footer — edit here to update all pages
+# ─────────────────────────────────────────
+copyright: "© 2025 Mastercraft Global Ltd. All rights reserved."
+links:
+  - label: "Instagram"
+    url: "https://www.instagram.com/mastercraft_global?igsh=ejRyaHJ2a2NpN3Ry"
+    external: true
+  - label: "YouTube"
+    url: "https://www.youtube.com/channel/UC3ddBQKgWxhFjno4_jDT34g"
+    external: true
+  - label: "Contact"
+    url: "/contact/"
+    external: false

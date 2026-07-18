@@ -1,0 +1,21 @@
+{% if site.popups.newsletter_modal.enabled %}
+<div class="modal-overlay" id="newsletter-modal"
+     data-trigger="{{ site.popups.newsletter_modal.trigger }}"
+     data-show-once="{{ site.popups.newsletter_modal.show_once }}"
+     role="dialog" aria-modal="true" aria-labelledby="modal-headline">
+  <div class="modal-box">
+    <button class="modal-close" id="modal-close" aria-label="Close">×</button>
+    <span class="modal-label">Stay Connected</span>
+    <h2 class="modal-h2" id="modal-headline">{{ site.popups.newsletter_modal.headline }}</h2>
+    <p class="modal-p">{{ site.popups.newsletter_modal.subtext }}</p>
+    <form class="modal-form" id="modal-form"
+          {% if site.popups.newsletter_modal.form_action %}
+          action="{{ site.popups.newsletter_modal.form_action }}" method="POST"
+          {% endif %}>
+      <input type="email" name="email" placeholder="Your email address" required autocomplete="email">
+      <button type="submit" class="btn-primary">{{ site.popups.newsletter_modal.button_text }}</button>
+    </form>
+    <p class="modal-skip" id="modal-skip">No thanks, maybe later</p>
+  </div>
+</div>
+{% endif %}

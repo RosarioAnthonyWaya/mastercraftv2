@@ -1,0 +1,18 @@
+# ─────────────────────────────────────────
+# Navigation — edit here to update all pages
+# ─────────────────────────────────────────
+links:
+  - label: "Home"
+    url: "/"
+  - label: "About"
+    url: "/about/"
+  - label: "Services"
+    url: "/services/"
+  - label: "Work"
+    url: "/work/"
+  - label: "Academy"
+    url: "/academy/"
+  - label: "Founder"
+    url: "/founder/"
+  - label: "Contact"
+    url: "/contact/"

@@ -1,0 +1,107 @@
+---
+---
+/* ─────────────────────────────────────────
+   Mastercraft Global Ltd — Main Stylesheet
+   Edit here to change design across all pages
+   ───────────────────────────────────────── */
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#0A0A0A;--bg2:#111111;--bg3:#181818;
+  --gold:#C9A96E;--gold-light:#E2C99A;
+  --white:#FFFFFF;--grey:#B0B0B0;--grey-dim:#555555;
+  --border:rgba(201,169,110,0.18);
+}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--white);font-family:'Manrope',sans-serif;font-weight:400;line-height:1.7;overflow-x:hidden;}
+
+/* ── ANNOUNCEMENT BAR ── */
+.ann-bar{width:100%;background:var(--ann-bg,#1a1408);border-bottom:1px solid var(--border);padding:0.7rem 5vw;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;position:relative;z-index:200;}
+.ann-bar p{font-size:0.72rem;color:var(--grey);letter-spacing:0.04em;text-align:center;}
+.ann-bar a{font-size:0.7rem;font-weight:700;color:var(--gold);text-decoration:none;letter-spacing:0.12em;white-space:nowrap;}
+.ann-bar a:hover{text-decoration:underline;}
+.ann-bar-close{background:none;border:none;color:var(--grey-dim);font-size:1rem;cursor:pointer;margin-left:auto;padding:0 0.2rem;line-height:1;flex-shrink:0;}
+.ann-bar-close:hover{color:var(--white);}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1.2rem 5vw;background:rgba(10,10,10,0.93);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,169,110,0.1);transition:top 0.3s;}
+nav.with-bar{top:42px;}
+.nav-logo{display:flex;align-items:center;text-decoration:none;}
+.nav-logo img{height:32px;width:auto;display:block;}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:0.68rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;color:var(--grey);transition:color 0.25s;}
+.nav-links a:hover,.nav-links a.active{color:var(--gold);}
+.nav-cta{font-size:0.66rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--bg);background:var(--gold);padding:0.65rem 1.4rem;transition:background 0.2s;white-space:nowrap;}
+.nav-cta:hover{background:var(--gold-light);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:0;}
+.nav-hamburger span{width:22px;height:1.5px;background:var(--white);display:block;transition:0.3s;}
+
+/* ── BUTTONS ── */
+.btn-primary{font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;color:var(--bg);background:var(--gold);padding:0.9rem 1.8rem;display:inline-block;transition:background 0.2s,transform 0.2s;border:none;cursor:pointer;}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px);}
+.btn-ghost{font-family:'Manrope',sans-serif;font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;color:var(--white);border:1px solid rgba(255,255,255,0.22);padding:0.9rem 1.8rem;display:inline-block;transition:border-color 0.2s,color 0.2s;}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
+
+/* ── SECTION LABEL ── */
+.section-label{font-size:0.62rem;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:block;}
+
+/* ── PAGE HERO (inner pages) ── */
+.page-hero{padding:11rem 5vw 5rem;border-bottom:1px solid var(--border);}
+.page-hero .section-label{margin-bottom:1.2rem;animation:fadeUp 0.8s ease 0.1s both;}
+.page-hero h1{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(2.5rem,5vw,5rem);line-height:1.06;letter-spacing:-0.025em;animation:fadeUp 0.9s ease 0.25s both;}
+.page-hero h1 em{font-style:italic;color:var(--gold);}
+.page-hero p{font-size:0.9rem;color:var(--grey);max-width:560px;line-height:1.9;margin-top:1.4rem;animation:fadeUp 0.9s ease 0.4s both;}
+
+/* ── FOOTER ── */
+footer{padding:2.5rem 5vw;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.footer-logo{display:flex;align-items:center;text-decoration:none;}
+.footer-logo img{height:28px;width:auto;}
+.footer-copy{font-size:0.7rem;color:var(--grey-dim);letter-spacing:0.05em;}
+.footer-links{display:flex;gap:1.8rem;list-style:none;}
+.footer-links a{font-size:0.63rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey-dim);text-decoration:none;transition:color 0.2s;}
+.footer-links a:hover{color:var(--gold);}
+
+/* ── NEWSLETTER MODAL ── */
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:500;display:flex;align-items:center;justify-content:center;padding:2rem;opacity:0;pointer-events:none;transition:opacity 0.3s;}
+.modal-overlay.active{opacity:1;pointer-events:all;}
+.modal-box{background:var(--bg2);border:1px solid var(--border);max-width:520px;width:100%;padding:3rem;position:relative;transform:translateY(20px);transition:transform 0.35s;}
+.modal-overlay.active .modal-box{transform:translateY(0);}
+.modal-close{position:absolute;top:1.2rem;right:1.2rem;background:none;border:none;color:var(--grey-dim);font-size:1.4rem;cursor:pointer;line-height:1;}
+.modal-close:hover{color:var(--white);}
+.modal-label{font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.8rem;display:block;}
+.modal-h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.6rem,3vw,2.2rem);line-height:1.15;margin-bottom:0.8rem;}
+.modal-p{font-size:0.85rem;color:var(--grey);line-height:1.8;margin-bottom:1.8rem;}
+.modal-form{display:flex;gap:0.6rem;flex-wrap:wrap;}
+.modal-form input{flex:1 1 200px;background:var(--bg3);border:1px solid rgba(255,255,255,0.1);color:var(--white);font-family:'Manrope',sans-serif;font-size:0.85rem;padding:0.85rem 1rem;outline:none;min-width:0;}
+.modal-form input:focus{border-color:var(--gold);}
+.modal-form input::placeholder{color:var(--grey-dim);}
+.modal-skip{font-size:0.7rem;color:var(--grey-dim);text-align:center;margin-top:1rem;cursor:pointer;text-decoration:underline;}
+.modal-skip:hover{color:var(--grey);}
+
+/* ── COOKIE NOTICE ── */
+.cookie-bar{position:fixed;bottom:0;left:0;right:0;z-index:400;background:var(--bg2);border-top:1px solid var(--border);padding:1rem 5vw;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;transform:translateY(100%);transition:transform 0.4s ease;}
+.cookie-bar.active{transform:translateY(0);}
+.cookie-bar p{font-size:0.78rem;color:var(--grey);line-height:1.6;flex:1;}
+.cookie-bar p a{color:var(--gold);text-decoration:none;}
+.cookie-btns{display:flex;gap:0.6rem;flex-shrink:0;}
+.cookie-accept{font-size:0.64rem;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;background:var(--gold);color:var(--bg);border:none;padding:0.6rem 1.2rem;cursor:pointer;transition:background 0.2s;}
+.cookie-accept:hover{background:var(--gold-light);}
+.cookie-decline{font-size:0.64rem;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;background:none;color:var(--grey-dim);border:1px solid var(--grey-dim);padding:0.6rem 1.2rem;cursor:pointer;transition:color 0.2s,border-color 0.2s;}
+.cookie-decline:hover{color:var(--grey);border-color:var(--grey);}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;transform:scaleY(1);}50%{opacity:0.3;transform:scaleY(0.55);}}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity 0.7s ease,transform 0.7s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  .nav-links{display:none;}
+  .nav-cta{display:none !important;}
+  .nav-hamburger{display:flex;}
+  nav.with-bar{top:42px;}
+  footer{flex-direction:column;text-align:center;}
+  .cookie-bar{flex-direction:column;text-align:center;}
+}
+@media(max-width:540px){footer{flex-direction:column;text-align:center;}}

@@ -1,0 +1,13 @@
+{% if site.popups.cookie_notice.enabled %}
+<div class="cookie-bar" id="cookie-bar" role="region" aria-label="Cookie notice">
+  <p>{{ site.popups.cookie_notice.text }}
+    {% if site.popups.cookie_notice.policy_url %}
+    <a href="{{ site.popups.cookie_notice.policy_url }}">Learn more</a>
+    {% endif %}
+  </p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" id="cookie-accept">{{ site.popups.cookie_notice.accept_text }}</button>
+    <button class="cookie-decline" id="cookie-decline">{{ site.popups.cookie_notice.decline_text }}</button>
+  </div>
+</div>
+{% endif %}

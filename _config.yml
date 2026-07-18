@@ -1,0 +1,56 @@
+# ─────────────────────────────────────────
+# Mastercraft Global Ltd — Jekyll Config
+# ─────────────────────────────────────────
+title: "Mastercraft Global Ltd"
+description: "Coaching, Designs & UK Global Talent Endorsement Support"
+url: "https://mastercraftglobal.com"
+baseurl: ""
+
+# Site identity
+logo: "https://i.ibb.co/4Zp67P6r/Mastercraft-Logo-H-white.png"
+favicon: "https://i.ibb.co/RTmn91dV/Mastercraft-site-Icon.png"
+email: "info@mastercraftglobal.com"
+phone: "+44 7888 266553"
+location: "Birmingham, UK"
+
+# Social links
+social:
+  instagram: "https://www.instagram.com/mastercraft_global?igsh=ejRyaHJ2a2NpN3Ry"
+  youtube: "https://www.youtube.com/channel/UC3ddBQKgWxhFjno4_jDT34g"
+  linkedin: ""
+
+# Nav CTA
+nav_cta_text: "Start a Project"
+nav_cta_url: "/contact/"
+
+# Popups — toggle any on/off here, no code changes needed
+popups:
+  announcement_bar:
+    enabled: true
+    text: "🎙 UK Global Talent Endorsement Webinar — Join the Waitlist"
+    link: "https://forms.gle/YMZsn4BgxSR6rhj59"
+    link_text: "Reserve Your Spot →"
+    bg_color: "#1a1408"
+    dismissible: true
+  newsletter_modal:
+    enabled: true
+    trigger: "exit_intent"      # exit_intent | scroll_50 | timer_5
+    headline: "Stay in the Loop"
+    subtext: "Coaching insights, endorsement tips, and Academy updates — delivered to your inbox."
+    button_text: "Subscribe"
+    form_action: ""             # add Mailchimp / ConvertKit action URL here
+    show_once: true             # won't re-show once dismissed
+  cookie_notice:
+    enabled: true
+    text: "We use cookies to improve your experience on this site."
+    accept_text: "Accept"
+    decline_text: "Decline"
+
+# Jekyll settings
+markdown: kramdown
+permalink: pretty
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules

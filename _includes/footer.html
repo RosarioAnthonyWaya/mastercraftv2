@@ -1,0 +1,15 @@
+<footer>
+  <a href="{{ '/' | relative_url }}" class="footer-logo">
+    <img src="{{ site.logo }}" alt="{{ site.title }}">
+  </a>
+  <p class="footer-copy">{{ site.data.footer.copyright }}</p>
+  <ul class="footer-links">
+    {% for link in site.data.footer.links %}
+    <li>
+      <a href="{{ link.url }}" {% if link.external %}target="_blank" rel="noopener"{% endif %}>
+        {{ link.label }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</footer>

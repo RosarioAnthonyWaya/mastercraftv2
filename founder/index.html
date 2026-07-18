@@ -1,0 +1,162 @@
+---
+layout: default
+title: "Founder"
+description: "Yemi Laja — Transformational Coach, Mastercraft Designs, UK Global Talent Endorsement Specialist, Theatre Producer, Speaker."
+page_css: |
+  .founder-intro{padding:5rem 5vw 6rem;display:grid;grid-template-columns:420px 1fr;gap:7rem;align-items:start;border-bottom:1px solid var(--border);}
+  .founder-portrait{position:relative;}
+  .portrait-box{aspect-ratio:3/4;overflow:hidden;}
+  .portrait-box img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block;filter:brightness(0.88);}
+  .portrait-accent{position:absolute;bottom:-1.5rem;right:-1.5rem;width:80px;height:80px;border:2px solid var(--gold);}
+  .portrait-accent2{position:absolute;top:-1.5rem;left:-1.5rem;width:40px;height:40px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);}
+  .founder-bio h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(2rem,3.5vw,3.2rem);line-height:1.1;margin-bottom:0.4rem;}
+  .founder-title-tag{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:2rem;display:block;}
+  .founder-bio p{font-size:0.9rem;color:var(--grey);line-height:1.9;margin-bottom:1.2rem;}
+  .founder-tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin:2rem 0;}
+  .tag{font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);border:1px solid var(--border);padding:0.35rem 0.85rem;font-weight:600;}
+  .contact-strip{margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap;}
+  .founder-mosaic{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:280px 280px;gap:2px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+  .mosaic-item{overflow:hidden;}.mosaic-item.tall{grid-row:span 2;}
+  .mosaic-item img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:grayscale(10%) brightness(0.75);transition:filter 0.4s,transform 0.5s;}
+  .mosaic-item:hover img{filter:grayscale(0%) brightness(0.92);transform:scale(1.04);}
+  .testimonials-section{padding:6rem 5vw;background:var(--bg2);border-bottom:1px solid var(--border);position:relative;overflow:hidden;}
+  .testimonials-bg{position:absolute;inset:0;z-index:0;}
+  .testimonials-bg img{width:100%;height:100%;object-fit:cover;object-position:top;filter:brightness(0.1) grayscale(30%);}
+  .testimonials-inner{position:relative;z-index:1;}
+  .testimonials-inner h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.6rem,2.5vw,2.4rem);margin-top:0.8rem;margin-bottom:3rem;}
+  .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(201,169,110,0.15);}
+  .testimonial-card{background:rgba(10,10,10,0.85);backdrop-filter:blur(12px);padding:2.5rem 2rem;}
+  .testimonial-quote{font-size:0.87rem;color:var(--grey);line-height:1.85;font-style:italic;margin-bottom:1.5rem;}
+  .testimonial-quote::before{content:'"';font-family:'DM Sans',sans-serif;font-size:3rem;color:var(--gold);line-height:0.6;display:block;margin-bottom:1rem;font-style:normal;}
+  .testimonial-name{font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:600;color:var(--white);}
+  .testimonial-role{font-size:0.72rem;color:var(--grey-dim);margin-top:0.2rem;}
+  .career-section{padding:6rem 5vw;border-bottom:1px solid var(--border);}
+  .career-section.alt{background:var(--bg2);}
+  .career-section h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.6rem,2.5vw,2.4rem);margin-top:0.8rem;margin-bottom:3rem;}
+  .timeline{display:flex;flex-direction:column;}
+  .timeline-item{display:grid;grid-template-columns:180px 1fr;gap:2rem;padding:2rem 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+  .timeline-item:last-child{border-bottom:none;}
+  .timeline-date{font-size:0.72rem;color:var(--grey-dim);letter-spacing:0.1em;padding-top:0.3rem;line-height:1.6;}
+  .timeline-content h4{font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:var(--white);margin-bottom:0.3rem;}
+  .timeline-content p{font-size:0.82rem;color:var(--grey);line-height:1.75;}
+  .edu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+  .edu-card{background:var(--bg2);padding:2.5rem 2rem;}
+  .edu-card h4{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;color:var(--white);margin-bottom:0.4rem;}
+  .edu-inst{font-size:0.78rem;color:var(--gold);font-weight:600;letter-spacing:0.08em;margin-bottom:0.5rem;display:block;}
+  .edu-detail{font-size:0.78rem;color:var(--grey);line-height:1.6;}
+  .founder-cta{padding:6rem 5vw;text-align:center;}
+  .founder-cta h2{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(2rem,4vw,4rem);line-height:1.1;margin-top:0.8rem;margin-bottom:1.2rem;}
+  .founder-cta h2 em{font-style:italic;color:var(--gold);}
+  .founder-cta p{font-size:0.88rem;color:var(--grey);max-width:460px;margin:0 auto 2.5rem;line-height:1.85;}
+  .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  @media(max-width:960px){
+    .founder-intro{grid-template-columns:1fr;gap:3rem;}.founder-portrait{max-width:360px;}
+    .founder-mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:auto;}.mosaic-item.tall{grid-row:span 1;}
+    .testimonials-grid{grid-template-columns:1fr;}
+    .timeline-item{grid-template-columns:1fr;}
+    .edu-grid{grid-template-columns:1fr;}
+  }
+---
+
+<div class="page-hero">
+  <span class="section-label">The Founder</span>
+  <h1>Yemi Laja —<br><em>Multipotentialite.</em></h1>
+  <p>Transformational Coach. Mastercraft Designs. UK Global Talent Endorsement Specialist. Theatre Producer. Speaker. Over 10 years of experience across the UK, Nigeria, and Ireland.</p>
+</div>
+
+<section class="founder-intro">
+  <div class="founder-portrait reveal">
+    <div class="portrait-box"><img src="https://yemilaja.co.uk/photos/yemi-12.png" alt="Yemi Laja — Founder, Mastercraft Global Ltd"></div>
+    <div class="portrait-accent2"></div><div class="portrait-accent"></div>
+  </div>
+  <div class="founder-bio reveal">
+    <span class="section-label" style="margin-bottom:1rem;">Biography</span>
+    <h2>Yemi Laja</h2>
+    <span class="founder-title-tag">Founder & Director — Mastercraft Global Ltd</span>
+    <p>Yemi Laja is a multipotentialite with over 10 years of experience as a transformational coach, Mastercraft designer, UK Global Talent Endorsement specialist, theatre producer, and creative entrepreneur.</p>
+    <p>She is a valued member of the renowned Crescent Theatre in Birmingham. Beyond performance, Yemi is a qualified lawyer (Barrister and Solicitor of the Federal Republic of Nigeria) and holds a Second Class Upper degree from Durham University.</p>
+    <p>This rare combination of legal precision, coaching methodology, creative expression, and UK Global Talent Endorsement expertise makes Mastercraft Global uniquely positioned to serve individuals and organisations at the highest level.</p>
+    <div class="founder-tags">
+      <span class="tag">Transformational Coach</span>
+      <span class="tag">UK Talent Endorsement</span>
+      <span class="tag">Mastercraft Designs</span>
+      <span class="tag">Theatre Producer</span>
+      <span class="tag">Speaker</span>
+      <span class="tag">Lawyer</span>
+    </div>
+    <div class="contact-strip">
+      <a href="/contact/" class="btn-primary">Work With Yemi</a>
+      <a href="https://www.instagram.com/mastercraft_global?igsh=ejRyaHJ2a2NpN3Ry" target="_blank" class="btn-ghost">Follow Mastercraft</a>
+    </div>
+  </div>
+</section>
+
+<div class="founder-mosaic">
+  <div class="mosaic-item tall reveal"><img src="https://yemilaja.co.uk/photos/yemi-08.png" alt="Yemi Laja" style="object-position:top;"></div>
+  <div class="mosaic-item reveal"><img src="https://i.ibb.co/Fky8Bwyk/29-jpg.jpg" alt="Mastercraft"></div>
+  <div class="mosaic-item reveal"><img src="https://i.ibb.co/Myh7YNs4/16-jpg.jpg" alt="Mastercraft"></div>
+  <div class="mosaic-item reveal"><img src="https://i.ibb.co/6Jt9c2BT/41-1-jpg.jpg" alt="Mastercraft"></div>
+  <div class="mosaic-item reveal"><img src="https://i.ibb.co/mVn4xL5H/9-jpg.jpg" alt="Mastercraft"></div>
+  <div class="mosaic-item reveal"><img src="https://i.ibb.co/qM8Nhq3Z/10-jpg.jpg" alt="Mastercraft"></div>
+</div>
+
+<section class="testimonials-section">
+  <div class="testimonials-bg"><img src="https://yemilaja.co.uk/photos/yemi-09.png" alt=""></div>
+  <div class="testimonials-inner">
+    <span class="section-label reveal" style="margin-bottom:0.8rem;">Client Voices</span>
+    <h2 class="reveal">What They Say About <em style="font-style:italic;color:var(--gold);">Mastercraft</em></h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">After my coaching session with Yemi Laja, I truly understood the power of the mind and meditation. I was able to tap into my imagination in a deeper way and be in control, even on days I feel pressured.</div>
+        <div class="testimonial-name">Ayobami Olomo</div>
+        <div class="testimonial-role">Train Systems Engineer — Mastercraft Coaching</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">During the Mastercraft programme with Yemi Laja, I gained a transformative perspective on meditation and stillness that continues to influence my life. Yemi's insights and achievements are highly commendable.</div>
+        <div class="testimonial-name">Peter Olagunju</div>
+        <div class="testimonial-role">Project Delivery Facilities — Mastercraft Coaching</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-quote">After the session at Mastercraft Coaching, I was able to learn how to match my spirit with my soul and see myself the way God sees me. I so much enjoyed the meditation session.</div>
+        <div class="testimonial-name">Tobi Kay</div>
+        <div class="testimonial-role">Communications Lead — Mastercraft Coaching</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="career-section">
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom:0.8rem;">The Journey</span>
+    <h2>A Career Built on Calling</h2>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item reveal"><div class="timeline-date">2026</div><div class="timeline-content"><h4>Crescent Theatre · UK Global Talent Webinar · Mastercraft Coaching 7.0</h4><p>Production Assistant for "The Importance of Being Earnest" at the Crescent Theatre. Continuing UK Global Talent Endorsement Support and Mastercraft Coaching conferences.</p></div></div>
+    <div class="timeline-item reveal"><div class="timeline-date">2024</div><div class="timeline-content"><h4>UK Global Talent Endorsement Support · Mastercraft Coaching 5.0 & 6.0</h4><p>Expanded UK Global Talent Endorsement Support services. Delivered Mastercraft Coaching Conferences 5.0 and 6.0. Collaborated with Tope Alabi and performed at LSE Africa Day.</p></div></div>
+    <div class="timeline-item reveal"><div class="timeline-date">2023</div><div class="timeline-content"><h4>Mastercraft Coaching Conference Launch</h4><p>Began empowering participants across London and Ireland to discover themselves, master their minds, and fulfil their purpose through immersive coaching sessions.</p></div></div>
+    <div class="timeline-item reveal"><div class="timeline-date">2022</div><div class="timeline-content"><h4>Durham University — Second Class Honours (Upper Division)</h4><p>Completed studies at Durham University, UK. Expanded Mastercraft into coaching and endorsement support.</p></div></div>
+    <div class="timeline-item reveal"><div class="timeline-date">2020</div><div class="timeline-content"><h4>Mastercraft Global Ltd Founded</h4><p>Founded Mastercraft Global Ltd — establishing coaching, UK Global Talent Endorsement Support, and Mastercraft Designs as core service pillars.</p></div></div>
+  </div>
+</section>
+
+<section class="career-section alt">
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom:0.8rem;">Academic Background</span>
+    <h2>Education & Qualifications</h2>
+  </div>
+  <div class="edu-grid">
+    <div class="edu-card reveal"><h4>Masters — Durham University</h4><span class="edu-inst">Durham University, UK</span><div class="edu-detail">Second Class Honours (Upper Division), 2022</div></div>
+    <div class="edu-card reveal"><h4>Bachelor of Laws (LLB)</h4><span class="edu-inst">Lagos State University</span><div class="edu-detail">Second Class Honours (Upper Division), 2017</div></div>
+    <div class="edu-card reveal"><h4>Barrister & Solicitor</h4><span class="edu-inst">Nigerian Law School</span><div class="edu-detail">Called to the Nigerian Bar — Second Class Honours (Upper Division), 2017</div></div>
+  </div>
+</section>
+
+<section class="founder-cta">
+  <span class="section-label reveal">Ready to Connect?</span>
+  <h2 class="reveal">Work With<br><em>Yemi & the Team</em></h2>
+  <p class="reveal">Whether for coaching, a design, or UK global talent endorsement support — get in touch and let's explore what's possible.</p>
+  <div class="cta-btns reveal">
+    <a href="/contact/" class="btn-primary">Get In Touch</a>
+    <a href="/services/" class="btn-ghost">View Services</a>
+  </div>
+</section>

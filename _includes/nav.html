@@ -1,0 +1,19 @@
+<nav id="main-nav">
+  <a href="{{ '/' | relative_url }}" class="nav-logo">
+    <img src="{{ site.logo }}" alt="{{ site.title }}">
+  </a>
+  <ul class="nav-links">
+    {% for link in site.data.nav.links %}
+    <li>
+      <a href="{{ link.url | relative_url }}"
+         {% if page.url == link.url or page.url == link.url | append: 'index.html' %}class="active"{% endif %}>
+        {{ link.label }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+  <a href="{{ site.nav_cta_url | relative_url }}" class="nav-cta">{{ site.nav_cta_text }}</a>
+  <button class="nav-hamburger" onclick="toggleMenu(this)" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>

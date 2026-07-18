@@ -1,0 +1,309 @@
+---
+layout: default
+title: "Music & Theatre Academy"
+description: "Mastercraft Music & Theatre Academy — a community nurturing talent through training, mentorship, and creative production."
+page_css: |
+  .reveal{opacity:1!important;transform:none!important;}
+  :root{--pad:6rem 5vw;}
+  .ac-hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:0 5vw 6rem;overflow:hidden;}
+  .ac-hero-bg{position:absolute;inset:0;}
+  .ac-hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;filter:brightness(0.35) grayscale(10%);}
+  .ac-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,#0A0A0A 0%,rgba(10,10,10,0.55) 50%,transparent 100%);}
+  .ac-hero-content{position:relative;z-index:2;max-width:720px;}
+  .ac-eyebrow{font-size:0.62rem;font-weight:600;letter-spacing:0.32em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:0.8rem;animation:fadeUp 0.8s ease 0.1s both;}
+  .ac-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold);display:block;flex-shrink:0;}
+  .ac-hero h1{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(2.8rem,6vw,5.5rem);line-height:1.06;letter-spacing:-0.025em;margin-bottom:1.6rem;animation:fadeUp 0.9s ease 0.25s both;}
+  .ac-hero h1 em{font-style:italic;color:var(--gold);font-weight:300;}
+  .ac-hero-sub{font-size:0.9rem;color:var(--grey);line-height:1.9;max-width:500px;margin-bottom:2.8rem;font-weight:300;animation:fadeUp 0.9s ease 0.4s both;}
+  .ac-hero-btns{display:flex;gap:1rem;flex-wrap:wrap;animation:fadeUp 0.9s ease 0.55s both;}
+  .ac-section{padding:var(--pad);border-bottom:1px solid var(--border);}
+  .ac-section.dark{background:var(--bg2);}
+  .ac-section-label{font-size:0.62rem;font-weight:700;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.9rem;}
+  .ac-section-h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.15;margin-bottom:1.2rem;}
+  .ac-section-h2 em{font-style:italic;color:var(--gold);}
+  .ac-section-p{font-size:0.9rem;color:var(--grey);line-height:1.9;max-width:620px;margin-bottom:1.2rem;}
+  .ac-about-inner{display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start;}
+  .ac-stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border);}
+  .ac-stat{padding:3.5rem 2rem;text-align:center;border-right:1px solid var(--border);}
+  .ac-stat:last-child{border-right:none;}
+  .ac-stat-num{font-family:'DM Sans',sans-serif;font-size:clamp(2rem,3.5vw,3.2rem);font-weight:300;color:var(--gold);line-height:1;margin-bottom:0.6rem;display:block;}
+  .ac-stat-label{font-size:0.76rem;color:var(--grey);line-height:1.65;}
+  .ac-benefits-top{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-bottom:3.5rem;}
+  .ac-benefits-top .ac-section-p{margin-bottom:0;}
+  .ac-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+  .ac-benefit-card{background:var(--bg2);padding:2.5rem 2.2rem;position:relative;transition:background 0.25s;}
+  .ac-benefit-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width 0.4s;}
+  .ac-benefit-card:hover{background:#161616;}.ac-benefit-card:hover::after{width:100%;}
+  .ac-benefit-num{font-family:'DM Sans',sans-serif;font-size:2.8rem;font-weight:700;color:rgba(201,169,110,0.1);line-height:1;margin-bottom:1rem;display:block;}
+  .ac-benefit-card h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.7rem;line-height:1.35;}
+  .ac-benefit-card p{font-size:0.81rem;color:var(--grey);line-height:1.8;}
+  .ac-plans-intro{margin-bottom:3rem;}
+  .ac-plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-bottom:1.5rem;}
+  .ac-plan{background:var(--bg2);padding:2.8rem 2.5rem;display:flex;flex-direction:column;}
+  .ac-plan.featured{background:#14100a;}
+  .ac-plan-badge{font-size:0.58rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:700;border:1px solid var(--border);padding:0.25rem 0.65rem;display:inline-block;align-self:flex-start;margin-bottom:1.2rem;}
+  .ac-plan-name{font-family:'DM Sans',sans-serif;font-size:1.35rem;font-weight:500;color:var(--white);margin-bottom:0.3rem;}
+  .ac-plan-sub{font-size:0.78rem;color:var(--grey-dim);margin-bottom:1.5rem;}
+  .ac-plan-price-block{border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:1.4rem 0;margin-bottom:1.6rem;}
+  .ac-plan-price-label{font-size:0.68rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey-dim);margin-bottom:0.4rem;display:block;}
+  .ac-plan-price{font-family:'DM Sans',sans-serif;font-size:1.7rem;font-weight:300;color:var(--gold);line-height:1;display:block;margin-bottom:0.35rem;}
+  .ac-plan-price-note{font-size:0.71rem;color:var(--grey-dim);font-style:italic;display:block;}
+  .ac-plan-desc{font-size:0.82rem;color:var(--grey);line-height:1.8;flex-grow:1;margin-bottom:2rem;}
+  .ac-plan .btn-primary,.ac-plan .btn-ghost{text-align:center;width:100%;opacity:0.5;cursor:not-allowed;pointer-events:none;}
+  .ac-plans-note{font-size:0.74rem;color:var(--grey-dim);text-align:center;line-height:1.8;}
+  .ac-who-inner{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;}
+  .ac-roles-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);}
+  .ac-role{background:var(--bg2);padding:0.95rem 1.2rem;font-size:0.83rem;color:var(--grey);display:flex;align-items:center;gap:0.7rem;transition:background 0.2s,color 0.2s;}
+  .ac-role:hover{background:#161616;color:var(--white);}
+  .ac-role::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .ac-role.full{grid-column:span 2;}
+  .ac-meetings-top{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;margin-bottom:3rem;}
+  .ac-placeholder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+  .ac-placeholder-card{background:var(--bg2);padding:3rem 2.5rem;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:1rem;min-height:220px;}
+  .ac-placeholder-icon{width:44px;height:44px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .ac-placeholder-icon svg{width:18px;height:18px;fill:none;stroke:var(--gold);stroke-width:1.5;}
+  .ac-placeholder-card p{font-size:0.8rem;color:var(--grey-dim);line-height:1.75;max-width:240px;}
+  .ac-testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;}
+  .ac-testimonial-card{background:var(--bg2);padding:2.5rem 2.2rem;display:flex;flex-direction:column;justify-content:space-between;min-height:220px;border:1px dashed rgba(201,169,110,0.18);}
+  .ac-testimonial-card p{font-size:0.82rem;color:var(--grey-dim);line-height:1.8;font-style:italic;}
+  .ac-testimonial-card .ac-t-author{font-size:0.72rem;color:var(--grey-dim);margin-top:1.8rem;display:flex;align-items:center;gap:0.6rem;}
+  .ac-testimonial-card .ac-t-author::before{content:'';width:20px;height:1px;background:var(--grey-dim);}
+  .ac-gallery-header{padding:4rem 5vw 2.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;border-bottom:1px solid var(--border);}
+  .ac-gallery-header-note{font-size:0.74rem;color:var(--grey-dim);font-style:italic;}
+  .ac-gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);}
+  .ac-gallery-item{aspect-ratio:1;overflow:hidden;position:relative;background:var(--bg3);}
+  .ac-gallery-item img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(15%) brightness(0.68);transition:filter 0.4s,transform 0.5s;}
+  .ac-gallery-item:hover img{filter:grayscale(0%) brightness(0.88);transform:scale(1.05);}
+  .ac-resources-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);margin-top:3rem;}
+  .ac-resource-card{background:var(--bg2);padding:2.2rem;display:flex;flex-direction:column;gap:0.5rem;min-height:160px;transition:background 0.2s;}
+  .ac-resource-card:hover{background:#161616;}
+  .ac-resource-type{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  .ac-resource-title{font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;color:var(--white);line-height:1.4;}
+  .ac-resource-note{font-size:0.75rem;color:var(--grey-dim);font-style:italic;margin-top:auto;padding-top:0.8rem;}
+  .ac-portal-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+  .ac-portal-box{background:var(--bg2);border:1px solid var(--border);padding:3rem;text-align:center;position:relative;}
+  .ac-portal-coming{position:absolute;top:1.2rem;right:1.2rem;font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);font-weight:700;border:1px solid var(--border);padding:0.22rem 0.55rem;}
+  .ac-portal-icon{width:56px;height:56px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;}
+  .ac-portal-icon svg{width:22px;height:22px;fill:none;stroke:var(--gold);stroke-width:1.5;}
+  .ac-portal-box h3{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:500;color:var(--white);margin-bottom:0.7rem;}
+  .ac-portal-box p{font-size:0.82rem;color:var(--grey);line-height:1.8;margin-bottom:2rem;}
+  .ac-portal-box .btn-ghost{opacity:0.45;cursor:not-allowed;pointer-events:none;display:inline-block;}
+  .ac-cta{padding:8rem 5vw;text-align:center;position:relative;overflow:hidden;border-top:1px solid var(--border);}
+  .ac-cta::before{content:'MMTA';position:absolute;font-family:'DM Sans',sans-serif;font-size:22vw;font-weight:700;color:rgba(201,169,110,0.025);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:-0.05em;line-height:1;}
+  .ac-cta h2{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(2.5rem,5vw,5rem);line-height:1.08;margin-bottom:1.2rem;}
+  .ac-cta h2 em{font-style:italic;color:var(--gold);}
+  .ac-cta-p{font-size:0.9rem;color:var(--grey);max-width:480px;margin:0 auto 2.5rem;line-height:1.85;}
+  .ac-cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.5rem;}
+  .ac-cta-note{font-size:0.72rem;color:var(--grey-dim);line-height:1.8;}
+  .ac-cta-note a{color:var(--gold);text-decoration:none;}
+  @media(max-width:960px){
+    .ac-about-inner{grid-template-columns:1fr;gap:2rem;}
+    .ac-stats{grid-template-columns:1fr 1fr;}.ac-stat{border-bottom:1px solid var(--border);}.ac-stat:nth-child(even){border-right:none;}
+    .ac-benefits-top{grid-template-columns:1fr;gap:1.5rem;}.ac-grid-3{grid-template-columns:1fr;}
+    .ac-plans-grid{grid-template-columns:1fr;}
+    .ac-who-inner{grid-template-columns:1fr;gap:3rem;}
+    .ac-placeholder-grid,.ac-testimonials-grid{grid-template-columns:1fr;}
+    .ac-gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .ac-resources-grid{grid-template-columns:1fr 1fr;}
+    .ac-portal-inner{grid-template-columns:1fr;gap:3rem;}
+  }
+  @media(max-width:540px){
+    .ac-stats{grid-template-columns:1fr;}.ac-stat{border-right:none;}
+    .ac-roles-grid{grid-template-columns:1fr;}.ac-role.full{grid-column:span 1;}
+    .ac-gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .ac-resources-grid{grid-template-columns:1fr;}
+  }
+---
+
+<section class="ac-hero">
+  <div class="ac-hero-bg">
+    <img src="https://i.ibb.co/wFcMb77q/57-jpg.jpg" alt="Mastercraft Music & Theatre Academy">
+  </div>
+  <div class="ac-hero-content">
+    <div class="ac-eyebrow">Mastercraft Global Ltd</div>
+    <h1>Music &amp; Theatre<br><em>Academy.</em></h1>
+    <p class="ac-hero-sub">A community for individuals passionate about music and theatre — nurturing talent, building skills, and creating a thriving movement that transforms lives.</p>
+    <div class="ac-hero-btns">
+      <a href="#join" class="btn-primary">Join the Academy</a>
+      <a href="#about" class="btn-ghost">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<section class="ac-section" id="about">
+  <div class="ac-about-inner">
+    <div>
+      <span class="ac-section-label">About the Academy</span>
+      <h2 class="ac-section-h2">Where Talent<br>Meets Purpose</h2>
+    </div>
+    <div>
+      <p class="ac-section-p">Mastercraft Music &amp; Theatre Academy is a community for individuals passionate about music and theatre. It exists to nurture talent, provide practical training, create opportunities for creative expression, and build a thriving community of creatives who desire to make impact through music and theatre.</p>
+      <p class="ac-section-p">The Academy meets at least once every month for training, networking, mentorship, rehearsals, and community engagement — bringing together artists at every stage of their journey in a structured, supportive environment.</p>
+    </div>
+  </div>
+</section>
+
+<div class="ac-stats">
+  <div class="ac-stat"><span class="ac-stat-num">Monthly</span><div class="ac-stat-label">Academy meetings —<br>training, rehearsals & networking</div></div>
+  <div class="ac-stat"><span class="ac-stat-num">3</span><div class="ac-stat-label">Membership categories<br>for every stage of life</div></div>
+  <div class="ac-stat"><span class="ac-stat-num">Open</span><div class="ac-stat-label">To all experience levels and<br>areas of specialisation</div></div>
+  <div class="ac-stat"><span class="ac-stat-num">UK</span><div class="ac-stat-label">Global Talent Visa support<br>for music & theatre members</div></div>
+</div>
+
+<section class="ac-section dark" id="benefits">
+  <div class="ac-benefits-top">
+    <div>
+      <span class="ac-section-label">Membership Benefits</span>
+      <h2 class="ac-section-h2">Everything You Get<br>as a Member</h2>
+    </div>
+    <p class="ac-section-p" style="padding-top:0.4rem;margin-bottom:0;">Every Academy member gets access to a rich ecosystem of support, training, and community — designed to help you grow, perform, and leave your mark.</p>
+  </div>
+  <div class="ac-grid-3">
+    <div class="ac-benefit-card"><span class="ac-benefit-num">01</span><h3>UK Global Talent Visa Support</h3><p>Support and guidance towards the UK Global Talent Visa application in the Music &amp; Theatre category — exclusive to Academy members.</p></div>
+    <div class="ac-benefit-card"><span class="ac-benefit-num">02</span><h3>Professional Creative Opportunities</h3><p>Opportunities to develop and utilise your music and theatre skills in a professional setting — performing, producing, directing, and creating.</p></div>
+    <div class="ac-benefit-card"><span class="ac-benefit-num">03</span><h3>Life-Transforming Productions</h3><p>Opportunities to participate in productions that transform lives through music and theatre.</p></div>
+    <div class="ac-benefit-card"><span class="ac-benefit-num">04</span><h3>Regular Training &amp; Workshops</h3><p>Structured workshops covering script writing, acting, music performance, theatre production, and more.</p></div>
+    <div class="ac-benefit-card"><span class="ac-benefit-num">05</span><h3>A Thriving Creative Community</h3><p>A vibrant community offering collaboration, mentorship, accountability, networking, and ongoing support.</p></div>
+    <div class="ac-benefit-card"><span class="ac-benefit-num">06</span><h3>Monthly Academy Meetings</h3><p>At least one meeting per month covering training, networking, mentorship, rehearsals, and community engagement.</p></div>
+  </div>
+</section>
+
+<section class="ac-section" id="join">
+  <div class="ac-plans-intro">
+    <span class="ac-section-label">Membership Plans</span>
+    <h2 class="ac-section-h2">Choose Your Membership</h2>
+    <p class="ac-section-p">The Academy operates on a monthly subscription model. All tiers include full access to Academy meetings, training, community, and UK Global Talent Visa support.</p>
+  </div>
+  <div class="ac-plans-grid">
+    <div class="ac-plan">
+      <div class="ac-plan-name">Student</div>
+      <div class="ac-plan-sub">Full-time student in education</div>
+      <div class="ac-plan-price-block"><span class="ac-plan-price-label">Monthly subscription</span><span class="ac-plan-price">Price TBA</span><span class="ac-plan-price-note">Pricing will be confirmed shortly</span></div>
+      <p class="ac-plan-desc">Full access to all Academy meetings, workshops, community events, mentorship, and UK Global Talent Visa guidance.</p>
+      <a href="#" class="btn-ghost">Registration Opening Soon</a>
+    </div>
+    <div class="ac-plan featured">
+      <span class="ac-plan-badge">Most Popular</span>
+      <div class="ac-plan-name">Employed Adult</div>
+      <div class="ac-plan-sub">Working professional</div>
+      <div class="ac-plan-price-block"><span class="ac-plan-price-label">Monthly subscription</span><span class="ac-plan-price">Price TBA</span><span class="ac-plan-price-note">Pricing will be confirmed shortly</span></div>
+      <p class="ac-plan-desc">Full access to all Academy meetings, workshops, professional creative opportunities, productions, networking, mentorship, and UK Global Talent Visa guidance.</p>
+      <a href="#" class="btn-primary">Registration Opening Soon</a>
+    </div>
+    <div class="ac-plan">
+      <div class="ac-plan-name">Unemployed Adult</div>
+      <div class="ac-plan-sub">Currently not in employment</div>
+      <div class="ac-plan-price-block"><span class="ac-plan-price-label">Monthly subscription</span><span class="ac-plan-price">Price TBA</span><span class="ac-plan-price-note">Pricing will be confirmed shortly</span></div>
+      <p class="ac-plan-desc">Full access to all Academy meetings, workshops, community events, mentorship, and UK Global Talent Visa guidance. Accessible pricing for those in transition.</p>
+      <a href="#" class="btn-ghost">Registration Opening Soon</a>
+    </div>
+  </div>
+  <p class="ac-plans-note">Pricing and registration links will be confirmed shortly. <a href="/contact/" style="color:var(--gold);text-decoration:none;">Contact us</a> to register your interest now.</p>
+</section>
+
+<section class="ac-section dark" id="who">
+  <div class="ac-who-inner">
+    <div>
+      <span class="ac-section-label">Who Can Join?</span>
+      <h2 class="ac-section-h2">The Academy<br>is Open to All</h2>
+      <p class="ac-section-p">Membership is open to anyone interested in music and theatre production — regardless of experience level or area of specialisation.</p>
+      <p class="ac-section-p">We welcome anyone who desires to contribute to creative work that transforms lives.</p>
+      <a href="#join" class="btn-primary" style="margin-top:1rem;display:inline-block;">Join the Academy</a>
+    </div>
+    <div>
+      <div class="ac-roles-grid">
+        <div class="ac-role">Actors</div><div class="ac-role">Singers</div>
+        <div class="ac-role">Musicians</div><div class="ac-role">Dancers</div>
+        <div class="ac-role">Gaffers</div><div class="ac-role">Event Planners</div>
+        <div class="ac-role">Graphic Designers</div><div class="ac-role">Production Crew</div>
+        <div class="ac-role">Technical Crew</div><div class="ac-role">Writers</div>
+        <div class="ac-role">Directors</div><div class="ac-role">Producers</div>
+        <div class="ac-role full">Anyone with a passion for music &amp; theatre</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ac-section" id="meetings">
+  <div class="ac-meetings-top">
+    <div><span class="ac-section-label">Upcoming Meetings</span><h2 class="ac-section-h2">Academy Calendar</h2></div>
+    <a href="#join" class="btn-ghost">Join to Attend</a>
+  </div>
+  <div class="ac-placeholder-grid">
+    <div class="ac-placeholder-card"><div class="ac-placeholder-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div><p>Academy meeting dates will appear here once scheduled. Members will be notified in advance.</p></div>
+    <div class="ac-placeholder-card"><div class="ac-placeholder-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><p>Monthly training sessions, rehearsals, and community events — calendar coming soon.</p></div>
+    <div class="ac-placeholder-card"><div class="ac-placeholder-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg></div><p>Networking and mentorship sessions scheduled monthly. Join to stay updated.</p></div>
+  </div>
+</section>
+
+<section class="ac-section dark" id="testimonials">
+  <span class="ac-section-label">Member Voices</span>
+  <h2 class="ac-section-h2">What Members <em>Are Saying</em></h2>
+  <p class="ac-section-p">Member testimonials will be added here once the Academy launches.</p>
+  <div class="ac-testimonials-grid">
+    <div class="ac-testimonial-card"><p>Member testimonials will appear here once the Academy launches. Be one of the first to share your experience.</p><div class="ac-t-author">Academy Member</div></div>
+    <div class="ac-testimonial-card"><p>Testimonials from actors, singers, producers, and creatives who have grown through the Academy community.</p><div class="ac-t-author">Academy Member</div></div>
+    <div class="ac-testimonial-card"><p>Stories of growth, collaboration, and lives changed through the power of music and theatre.</p><div class="ac-t-author">Academy Member</div></div>
+  </div>
+</section>
+
+<section style="border-bottom:1px solid var(--border);" id="gallery">
+  <div class="ac-gallery-header">
+    <div><span class="ac-section-label" style="margin-bottom:0.6rem;">Gallery</span><h2 class="ac-section-h2" style="margin-bottom:0;">Academy in Action</h2></div>
+    <span class="ac-gallery-header-note">Photos from meetings and productions — replacing with Academy images when available</span>
+  </div>
+  <div class="ac-gallery-grid">
+    <div class="ac-gallery-item"><img src="https://i.ibb.co/Fky8Bwyk/29-jpg.jpg" alt="Mastercraft Academy"></div>
+    <div class="ac-gallery-item"><img src="https://i.ibb.co/Myh7YNs4/16-jpg.jpg" alt="Mastercraft Academy"></div>
+    <div class="ac-gallery-item"><img src="https://i.ibb.co/mVn4xL5H/9-jpg.jpg" alt="Mastercraft Academy"></div>
+    <div class="ac-gallery-item"><img src="https://i.ibb.co/5gmwbJ52/34-jpg.jpg" alt="Mastercraft Academy"></div>
+    <div class="ac-gallery-item"><img src="https://i.ibb.co/3mWS1fNL/49-jpg.jpg" alt="Mastercraft Academy"></div>
+    <div class="ac-gallery-item"><img src="https://i.ibb.co/Rxtg1B9/15-jpg.jpg" alt="Mastercraft Academy"></div>
+    <div class="ac-gallery-item"><img src="https://i.ibb.co/NnW7mDdY/7-1-jpg.jpg" alt="Mastercraft Academy"></div>
+    <div class="ac-gallery-item"><img src="https://i.ibb.co/fdbjtnV6/47-jpg.jpg" alt="Mastercraft Academy"></div>
+  </div>
+</section>
+
+<section class="ac-section dark" id="resources">
+  <span class="ac-section-label">Training Resources</span>
+  <h2 class="ac-section-h2">Member Resources <em>Coming Soon</em></h2>
+  <p class="ac-section-p">Members will have access to a growing library of workshops, guides, and creative tools — available exclusively through the Academy.</p>
+  <div class="ac-resources-grid">
+    <div class="ac-resource-card"><span class="ac-resource-type">Workshop</span><div class="ac-resource-title">Script Writing Fundamentals</div><div class="ac-resource-note">Available to members after launch</div></div>
+    <div class="ac-resource-card"><span class="ac-resource-type">Workshop</span><div class="ac-resource-title">Music Performance Techniques</div><div class="ac-resource-note">Available to members after launch</div></div>
+    <div class="ac-resource-card"><span class="ac-resource-type">Workshop</span><div class="ac-resource-title">Acting &amp; Stage Presence</div><div class="ac-resource-note">Available to members after launch</div></div>
+    <div class="ac-resource-card"><span class="ac-resource-type">Guide</span><div class="ac-resource-title">UK Global Talent Visa — Music &amp; Theatre</div><div class="ac-resource-note">Exclusive member guide — coming soon</div></div>
+    <div class="ac-resource-card"><span class="ac-resource-type">Workshop</span><div class="ac-resource-title">Theatre Production Essentials</div><div class="ac-resource-note">Available to members after launch</div></div>
+    <div class="ac-resource-card"><span class="ac-resource-type">Community</span><div class="ac-resource-title">Mentorship &amp; Accountability Pairs</div><div class="ac-resource-note">Matched on joining — launching soon</div></div>
+  </div>
+</section>
+
+<section class="ac-section" id="portal">
+  <div class="ac-portal-inner">
+    <div>
+      <span class="ac-section-label">Member Area</span>
+      <h2 class="ac-section-h2">Member Login &amp;<br>Payment Portal</h2>
+      <p class="ac-section-p">A dedicated member login area and payment portal is being developed. Members will be able to manage their subscription, access exclusive resources, and engage with the community.</p>
+      <p style="font-size:0.82rem;color:var(--grey-dim);margin-bottom:2rem;">Join the Academy now to be notified when the portal launches.</p>
+      <a href="#join" class="btn-primary">Join the Academy</a>
+    </div>
+    <div class="ac-portal-box">
+      <span class="ac-portal-coming">Coming Soon</span>
+      <div class="ac-portal-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <h3>Member Login</h3>
+      <p>Access your Academy dashboard, resources, subscription management, and community updates.</p>
+      <span class="btn-ghost">Login — Coming Soon</span>
+    </div>
+  </div>
+</section>
+
+<section class="ac-cta">
+  <span class="ac-section-label" style="justify-content:center;display:block;margin-bottom:1.2rem;">Ready to Join?</span>
+  <h2>Step Into the<br><em>Academy.</em></h2>
+  <p class="ac-cta-p">Whether you are an actor, singer, musician, producer, writer, or simply someone passionate about music and theatre — Mastercraft Music &amp; Theatre Academy has a place for you.</p>
+  <div class="ac-cta-btns">
+    <a href="#" class="btn-primary">Join the Academy</a>
+    <a href="/contact/" class="btn-ghost">Get In Touch</a>
+  </div>
+  <p class="ac-cta-note">Registration form link will be added shortly. <a href="/contact/">Contact us</a> in the meantime to register your interest.</p>
+</section>

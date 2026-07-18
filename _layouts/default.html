@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% include head.html %}
+</head>
+<body>
+
+  {% include announcement-bar.html %}
+  {% include nav.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+  {% include newsletter-modal.html %}
+  {% include cookie-notice.html %}
+
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+  {% if page.page_js %}
+  <script>{{ page.page_js }}</script>
+  {% endif %}
+
+</body>
+</html>

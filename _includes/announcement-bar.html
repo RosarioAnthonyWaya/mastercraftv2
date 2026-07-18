@@ -1,0 +1,12 @@
+{% if site.popups.announcement_bar.enabled %}
+<div class="ann-bar" id="ann-bar" style="--ann-bg:{{ site.popups.announcement_bar.bg_color }};display:none;">
+  <p>{{ site.popups.announcement_bar.text }}
+    {% if site.popups.announcement_bar.link %}
+    &nbsp;<a href="{{ site.popups.announcement_bar.link }}" target="_blank">{{ site.popups.announcement_bar.link_text }}</a>
+    {% endif %}
+  </p>
+  {% if site.popups.announcement_bar.dismissible %}
+  <button class="ann-bar-close" id="ann-bar-close" aria-label="Close">×</button>
+  {% endif %}
+</div>
+{% endif %}

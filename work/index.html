@@ -1,0 +1,132 @@
+---
+layout: default
+title: "Work & Impact"
+description: "Across coaching, UK global talent endorsement support, and Mastercraft designs — a snapshot of what Mastercraft has delivered."
+page_css: |
+  .hero-gallery{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:300px 300px;gap:2px;border-bottom:1px solid var(--border);}
+  .hg-item{overflow:hidden;}.hg-item.main{grid-row:span 2;}
+  .hg-item img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;filter:grayscale(15%) brightness(0.68);transition:filter 0.4s,transform 0.5s;}
+  .hg-item:hover img{filter:grayscale(0%) brightness(0.88);transform:scale(1.03);}
+  .metrics-strip{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--border);}
+  .metric-item{padding:4rem 2rem;text-align:center;border-right:1px solid var(--border);}
+  .metric-item:last-child{border-right:none;}
+  .metric-num{font-family:'DM Sans',sans-serif;font-size:clamp(2.5rem,3.5vw,3.8rem);font-weight:300;color:var(--gold);line-height:1;margin-bottom:0.6rem;display:block;}
+  .metric-label{font-size:0.78rem;color:var(--grey);line-height:1.65;}
+  .work-grid-section{padding:6rem 5vw;border-bottom:1px solid var(--border);}
+  .work-grid-section.alt{background:var(--bg2);}
+  .section-header{margin-bottom:3.5rem;}
+  .section-header h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.6rem,2.5vw,2.4rem);margin-top:0.8rem;}
+  .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);}
+  .work-card{background:var(--bg);transition:background 0.2s;position:relative;text-decoration:none;color:inherit;display:block;}
+  .work-card.alt{background:var(--bg2);}.work-card:hover{background:#141414;}
+  .work-card-img{width:100%;aspect-ratio:16/9;object-fit:cover;object-position:top;display:block;filter:grayscale(15%) brightness(0.68);transition:filter 0.4s,transform 0.4s;}
+  .work-card:hover .work-card-img{filter:grayscale(0%) brightness(0.88);transform:scale(1.03);}
+  .work-card-img-placeholder{width:100%;aspect-ratio:16/9;background:var(--bg3);display:flex;align-items:center;justify-content:center;}
+  .work-card-img-placeholder span{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey-dim);}
+  .work-card-body{padding:2rem 2rem 2.2rem;}
+  .work-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width 0.4s;}
+  .work-card:hover::after{width:100%;}
+  .work-cat{font-size:0.6rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.8rem;display:block;}
+  .work-card h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;color:var(--white);margin-bottom:0.5rem;line-height:1.35;}
+  .work-card p{font-size:0.78rem;color:var(--grey);line-height:1.7;}
+  .webinar-feature{background:linear-gradient(135deg,#1a1408 0%,#0e0c06 100%);border:1px solid var(--gold);padding:2.5rem 2rem;position:relative;}
+  .webinar-feature-badge{font-size:0.58rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.8rem;display:block;}
+  .webinar-feature h3{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;color:var(--white);margin-bottom:0.6rem;line-height:1.35;}
+  .webinar-feature p{font-size:0.78rem;color:var(--grey);line-height:1.7;margin-bottom:1.2rem;}
+  .webinar-feature a{font-size:0.64rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;color:var(--bg);background:var(--gold);padding:0.7rem 1.4rem;display:inline-block;transition:background 0.2s;}
+  .webinar-feature a:hover{background:var(--gold-light);}
+  .img-break{width:100%;height:400px;overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);position:relative;}
+  .img-break img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;filter:brightness(0.4);}
+  .img-break-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;gap:1rem;padding:2rem;}
+  .img-break-overlay h3{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(2rem,4vw,3.5rem);line-height:1.1;}
+  .img-break-overlay h3 em{font-style:italic;color:var(--gold);}
+  .img-break-overlay p{font-size:0.82rem;color:var(--grey);max-width:420px;line-height:1.8;}
+  .work-cta{padding:6rem 5vw;text-align:center;}
+  .work-cta h2{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(2rem,4vw,4rem);line-height:1.1;margin-top:0.8rem;margin-bottom:1.2rem;}
+  .work-cta h2 em{font-style:italic;color:var(--gold);}
+  .work-cta p{font-size:0.88rem;color:var(--grey);max-width:460px;margin:0 auto 2.5rem;line-height:1.85;}
+  .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  @media(max-width:960px){
+    .hero-gallery{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px;}.hg-item.main{grid-row:span 1;}
+    .metrics-strip{grid-template-columns:1fr 1fr;}.metric-item{border-bottom:1px solid var(--border);}.metric-item:nth-child(even){border-right:none;}
+    .work-grid{grid-template-columns:1fr;}
+  }
+  @media(max-width:540px){.metrics-strip{grid-template-columns:1fr;}.metric-item{border-right:none;}}
+---
+
+<div class="page-hero">
+  <span class="section-label">Work & Impact</span>
+  <h1>Results That<br><em>Speak for Themselves.</em></h1>
+  <p>Across coaching, UK global talent endorsement support, and Mastercraft designs — here is a snapshot of what Mastercraft has delivered.</p>
+</div>
+
+<div class="hero-gallery">
+  <div class="hg-item main"><img src="https://i.ibb.co/3mWS1fNL/49-jpg.jpg" alt="Mastercraft Performance"></div>
+  <div class="hg-item"><img src="https://yemilaja.co.uk/photos/yemi-08.png" alt="Yemi Laja"></div>
+  <div class="hg-item"><img src="https://i.ibb.co/Rxtg1B9/15-jpg.jpg" alt="Mastercraft"></div>
+  <div class="hg-item"><img src="https://i.ibb.co/NnW7mDdY/7-1-jpg.jpg" alt="Mastercraft"></div>
+  <div class="hg-item"><img src="https://i.ibb.co/5gmwbJ52/34-jpg.jpg" alt="Mastercraft"></div>
+</div>
+
+<div class="metrics-strip">
+  <div class="metric-item reveal"><span class="metric-num">50+</span><div class="metric-label">Individuals coached across<br>UK, Nigeria & Ireland</div></div>
+  <div class="metric-item reveal"><span class="metric-num">100+</span><div class="metric-label">Participants coached across<br>programmes & conferences</div></div>
+  <div class="metric-item reveal"><span class="metric-num">7+</span><div class="metric-label">Mastercraft Coaching<br>Conferences delivered</div></div>
+  <div class="metric-item reveal"><span class="metric-num">3</span><div class="metric-label">Countries — UK, Nigeria<br>& Ireland</div></div>
+</div>
+
+<section class="work-grid-section">
+  <div class="section-header reveal">
+    <span class="section-label" style="margin-bottom:0.8rem;">Coaching & Development</span>
+    <h2>Mastercraft Coaching Conferences</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card reveal"><img class="work-card-img" src="https://i.ibb.co/67sw7FGy/40-jpg.jpg" alt="Coaching 1.0"><div class="work-card-body"><span class="work-cat">Conference</span><h3>Mastercraft Coaching 1.0</h3><p>The inaugural Mastercraft Coaching Conference — helping participants discover themselves, master their minds, and step into their purpose.</p></div></div>
+    <div class="work-card reveal"><img class="work-card-img" src="https://i.ibb.co/6Jt9c2BT/41-1-jpg.jpg" alt="Coaching 2.0"><div class="work-card-body"><span class="work-cat">Conference</span><h3>Mastercraft Coaching 2.0</h3><p>Deeper explorations of mindset, identity, and purposeful living for a growing community of participants.</p></div></div>
+    <div class="work-card reveal"><img class="work-card-img" src="https://i.ibb.co/jvhsGNL0/13-jpg.jpg" alt="Coaching 3.0"><div class="work-card-body"><span class="work-cat">Conference</span><h3>Mastercraft Coaching 3.0</h3><p>Expanded reach across the UK and Ireland, with group coaching, meditation, and structured accountability.</p></div></div>
+    <div class="work-card reveal"><img class="work-card-img" src="https://i.ibb.co/fdbjtnV6/47-jpg.jpg" alt="Coaching 4.0"><div class="work-card-body"><span class="work-cat">Conference</span><h3>Mastercraft Coaching 4.0</h3><p>Intensive transformation sessions exploring confessions, meditative practices, and vision alignment.</p></div></div>
+    <div class="work-card reveal"><img class="work-card-img" src="https://i.ibb.co/qM8Nhq3Z/10-jpg.jpg" alt="Coaching 5.0"><div class="work-card-body"><span class="work-cat">Conference</span><h3>Mastercraft Coaching 5.0</h3><p>A milestone edition — bringing together over 50 participants in a powerful day of clarity and direction.</p></div></div>
+    <div class="work-card reveal"><img class="work-card-img" src="https://i.ibb.co/PZWwgBqS/35-jpg.jpg" alt="Coaching 6.0"><div class="work-card-body"><span class="work-cat">Conference</span><h3>Mastercraft Coaching 6.0</h3><p>Structured around introspective practices and sustained accountability, with participants from three countries.</p></div></div>
+    <div class="work-card reveal"><img class="work-card-img" src="https://i.ibb.co/Fky8Bwyk/29-jpg.jpg" alt="Coaching 7.0"><div class="work-card-body"><span class="work-cat">Conference</span><h3>Mastercraft Coaching 7.0</h3><p>Deep transformational work, confessions, meditations, and ongoing community support.</p></div></div>
+    <div class="webinar-feature reveal">
+      <span class="webinar-feature-badge">Free — Join the Waitlist</span>
+      <h3>UK Global Talent Endorsement Webinar</h3>
+      <p>A free webinar to help you understand the UK Global Talent Endorsement process, your eligibility, and how Mastercraft can support you.</p>
+      <a href="https://forms.gle/YMZsn4BgxSR6rhj59" target="_blank">Join the Waitlist →</a>
+    </div>
+    <div class="work-card reveal">
+      <div class="work-card-img-placeholder"><span>Mastercraft Designs<br>Images Coming Soon</span></div>
+      <div class="work-card-body"><span class="work-cat">Mastercraft Designs</span><h3>Vision-Led Design Work</h3><p>Personalised name-based word designs, vision board designs, and creative visual storytelling.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="img-break">
+  <img src="https://i.ibb.co/8nDWX6gY/107-jpg.jpg" alt="Mastercraft Global">
+  <div class="img-break-overlay">
+    <h3>On Every Stage.<br><em>In Every Room.</em></h3>
+    <p>From Lagos to London, Mastercraft brings excellence wherever it goes.</p>
+  </div>
+</div>
+
+<section class="work-grid-section alt">
+  <div class="section-header reveal">
+    <span class="section-label" style="margin-bottom:0.8rem;">UK Global Talent Endorsement Support</span>
+    <h2>Endorsement Success Stories</h2>
+  </div>
+  <div class="work-grid">
+    <div class="work-card alt reveal"><img class="work-card-img" src="https://i.ibb.co/3mWS1fNL/49-jpg.jpg" alt="UK Global Talent"><div class="work-card-body"><span class="work-cat">UK Global Talent</span><h3>Profile Assessment & Ideation</h3><p>Working with exceptional individuals to identify their strongest evidence and build a compelling portfolio for UK Global Talent Endorsement.</p></div></div>
+    <div class="work-card alt reveal"><img class="work-card-img" src="https://i.ibb.co/wFcMb77q/57-jpg.jpg" alt="Documentation"><div class="work-card-body"><span class="work-cat">UK Global Talent</span><h3>Documentation & Evidence Curation</h3><p>Comprehensive document review, evidence sourcing, and structured guidance through the UK Global Talent Endorsement process.</p></div></div>
+    <div class="work-card alt reveal"><img class="work-card-img" src="https://i.ibb.co/Myh7YNs4/16-jpg.jpg" alt="Consultation"><div class="work-card-body"><span class="work-cat">UK Global Talent</span><h3>Consultation & Application Support</h3><p>High-touch consultation sessions from initial AMA through to final application review for individuals in the Arts & Culture category.</p></div></div>
+  </div>
+</section>
+
+<section class="work-cta">
+  <span class="section-label reveal">Add Your Story</span>
+  <h2 class="reveal">Become Our<br><em>Next Success Story</em></h2>
+  <p class="reveal">Whether you're seeking coaching, a design, or UK global talent endorsement support — we're ready to work with you.</p>
+  <div class="cta-btns reveal">
+    <a href="/contact/" class="btn-primary">Get Started</a>
+    <a href="/services/" class="btn-ghost">View Services</a>
+  </div>
+</section>

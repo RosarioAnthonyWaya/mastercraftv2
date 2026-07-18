@@ -1,0 +1,137 @@
+---
+layout: default
+title: "Contact"
+description: "Get in touch with Mastercraft Global Ltd — coaching, UK global talent endorsement, Mastercraft designs."
+page_css: |
+  .contact-layout{padding:5rem 5vw 7rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start;border-bottom:1px solid var(--border);}
+  .contact-portrait{position:relative;margin-bottom:2.5rem;}
+  .contact-portrait-img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top center;display:block;filter:brightness(0.85);}
+  .contact-portrait-accent{position:absolute;bottom:-1rem;right:-1rem;width:60px;height:60px;border:2px solid var(--gold);}
+  .contact-portrait-accent2{position:absolute;top:-1rem;left:-1rem;width:35px;height:35px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);}
+  .contact-info h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.2;margin-top:0.8rem;margin-bottom:1.4rem;}
+  .contact-info p{font-size:0.88rem;color:var(--grey);line-height:1.9;margin-bottom:2.5rem;}
+  .contact-detail{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:3rem;}
+  .contact-item{display:flex;gap:1.2rem;align-items:flex-start;}
+  .contact-icon{width:36px;height:36px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:0.1rem;}
+  .contact-icon svg{width:14px;height:14px;fill:none;stroke:var(--gold);stroke-width:1.5;}
+  .contact-item-label{font-size:0.6rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey-dim);font-weight:600;margin-bottom:0.2rem;display:block;}
+  .contact-item-val{font-size:0.88rem;color:var(--white);text-decoration:none;}
+  .contact-item-val:hover{color:var(--gold);}
+  .social-links{display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1rem;}
+  .social-link{font-size:0.62rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey);border:1px solid var(--border);padding:0.5rem 1rem;text-decoration:none;font-weight:600;transition:color 0.2s,border-color 0.2s;}
+  .social-link:hover{color:var(--gold);border-color:var(--gold);}
+  .contact-form{display:flex;flex-direction:column;gap:1.4rem;}
+  .form-group{display:flex;flex-direction:column;gap:0.5rem;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;}
+  label{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--grey-dim);font-weight:600;}
+  input,select,textarea{background:var(--bg2);border:1px solid rgba(255,255,255,0.1);color:var(--white);font-family:'Manrope',sans-serif;font-size:0.88rem;padding:1rem 1.2rem;outline:none;transition:border-color 0.2s;width:100%;appearance:none;-webkit-appearance:none;}
+  input:focus,select:focus,textarea:focus{border-color:var(--gold);}
+  input::placeholder,textarea::placeholder{color:var(--grey-dim);}
+  select{cursor:pointer;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' fill='none'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23C9A96E' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.2rem center;}
+  select option{background:var(--bg2);}
+  textarea{resize:vertical;min-height:140px;line-height:1.7;}
+  .form-submit .btn-primary{width:100%;text-align:center;cursor:pointer;font-family:'Manrope',sans-serif;border:none;}
+  .form-note{font-size:0.72rem;color:var(--grey-dim);text-align:center;margin-top:0.8rem;line-height:1.65;}
+  .success-msg{display:none;background:rgba(201,169,110,0.08);border:1px solid var(--border);padding:2rem;text-align:center;margin-top:1rem;}
+  .success-msg p{font-size:0.88rem;color:var(--gold);line-height:1.7;}
+  .webinar-cta{padding:5rem 5vw;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+  .webinar-cta-text h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.6rem,2.5vw,2.4rem);margin-top:0.8rem;margin-bottom:1rem;}
+  .webinar-cta-text p{font-size:0.88rem;color:var(--grey);line-height:1.9;margin-bottom:2rem;}
+  .webinar-cta-box{background:linear-gradient(135deg,#1a1408,#0e0c06);border:1px solid var(--gold);padding:2.5rem;}
+  .webinar-cta-box h3{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:500;color:var(--white);margin-bottom:0.5rem;}
+  .webinar-cta-box p{font-size:0.8rem;color:var(--grey);line-height:1.7;margin-bottom:1.4rem;}
+  .webinar-cta-box a{font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;color:var(--bg);background:var(--gold);padding:0.75rem 1.5rem;display:inline-block;transition:background 0.2s;}
+  .webinar-cta-box a:hover{background:var(--gold-light);}
+  @media(max-width:960px){
+    .contact-layout{grid-template-columns:1fr;gap:4rem;}.contact-portrait{max-width:320px;}
+    .form-row{grid-template-columns:1fr;}.webinar-cta{grid-template-columns:1fr;}
+  }
+page_js: |
+  function handleSubmit(e) {
+    e.preventDefault();
+    const form = document.getElementById('contactForm');
+    const msg = document.getElementById('successMsg');
+    if (!form || !msg) return;
+    form.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true);
+    msg.style.display = 'block';
+    msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+---
+
+<div class="page-hero">
+  <span class="section-label">Get In Touch</span>
+  <h1>Let's Start<br><em>Something.</em></h1>
+  <p>Whether you're ready to book coaching, enquire about UK global talent endorsement support, or commission a Mastercraft design — we'd love to hear from you.</p>
+</div>
+
+<section class="contact-layout">
+  <div class="contact-info reveal">
+    <div class="contact-portrait">
+      <img class="contact-portrait-img" src="https://yemilaja.co.uk/photos/yemi-14.jpg" alt="Yemi Laja — Mastercraft Global Ltd">
+      <div class="contact-portrait-accent2"></div><div class="contact-portrait-accent"></div>
+    </div>
+    <span class="section-label" style="margin-bottom:1rem;">Contact Information</span>
+    <h2>Reach Out Directly</h2>
+    <p>We work with individuals and organisations across the UK, Nigeria, and Ireland. No matter where you are, we're happy to connect and explore the right path forward.</p>
+    <div class="contact-detail">
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div><span class="contact-item-label">Email</span><a class="contact-item-val" href="mailto:info@mastercraftglobal.com">info@mastercraftglobal.com</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3-8.57A2 2 0 012.18 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.16a16 16 0 006.22 6.22l1.52-1.52a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+        <div><span class="contact-item-label">Phone</span><a class="contact-item-val" href="tel:+447888266553">+44 7888 266553</a></div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><span class="contact-item-label">Based In</span><span class="contact-item-val">Birmingham, UK</span></div>
+      </div>
+    </div>
+    <span class="section-label" style="margin-bottom:0.8rem;">Follow Us</span>
+    <div class="social-links">
+      <a class="social-link" href="https://www.instagram.com/mastercraft_global?igsh=ejRyaHJ2a2NpN3Ry" target="_blank">Instagram</a>
+      <a class="social-link" href="https://www.youtube.com/channel/UC3ddBQKgWxhFjno4_jDT34g" target="_blank">YouTube</a>
+      <a class="social-link" href="https://forms.gle/YMZsn4BgxSR6rhj59" target="_blank">Webinar Waitlist</a>
+    </div>
+  </div>
+  <div class="reveal">
+    <span class="section-label" style="margin-bottom:1.4rem;">Send a Message</span>
+    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Your first name" required></div>
+        <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Your last name" required></div>
+      </div>
+      <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="your@email.com" required></div>
+      <div class="form-group">
+        <label for="service">Service Interested In</label>
+        <select id="service" required>
+          <option value="" disabled selected>Select a service...</option>
+          <option value="coaching">Coaching & Development</option>
+          <option value="endorsement">UK Global Talent Endorsement Support</option>
+          <option value="designs">Mastercraft Designs</option>
+          <option value="academy">Music & Theatre Academy</option>
+          <option value="webinar">UK Global Talent Endorsement Webinar</option>
+          <option value="other">Other / Not Sure Yet</option>
+        </select>
+      </div>
+      <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell us a little about what you're looking for..." required></textarea></div>
+      <div class="form-submit"><button type="submit" class="btn-primary">Send Message →</button></div>
+      <p class="form-note">We aim to respond to all enquiries within 2 business days.</p>
+      <div class="success-msg" id="successMsg"><p>✓ Thank you for reaching out. We'll be in touch within 2 business days.</p></div>
+    </form>
+  </div>
+</section>
+
+<section class="webinar-cta">
+  <div class="webinar-cta-text reveal">
+    <span class="section-label" style="margin-bottom:0.8rem;">Free Resource</span>
+    <h2>UK Global Talent Endorsement Webinar</h2>
+    <p>Not sure where to begin with your UK Global Talent Endorsement application? Join our free webinar — we walk you through the process, eligibility criteria, and how Mastercraft can support you at every stage.</p>
+    <a href="https://forms.gle/YMZsn4BgxSR6rhj59" target="_blank" class="btn-primary">Join the Waitlist →</a>
+  </div>
+  <div class="webinar-cta-box reveal">
+    <h3>What You'll Learn</h3>
+    <p>The UK Global Talent Endorsement process, what qualifies as evidence, how to build a compelling application, and how Mastercraft's packages support each stage.</p>
+    <a href="https://forms.gle/YMZsn4BgxSR6rhj59" target="_blank">Reserve Your Spot →</a>
+  </div>
+</section>
