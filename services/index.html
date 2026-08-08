@@ -57,7 +57,8 @@ page_css: |
   .designs-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
   .designs-img-item{aspect-ratio:1;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;}
   .designs-img-placeholder{font-family:'DM Sans',sans-serif;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey-dim);text-align:center;padding:2rem;}
-  .services-cta{padding:6rem 5vw;text-align:center;}
+ .designs-img-main{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center;display:block;filter:brightness(0.82);}  
+.services-cta{padding:6rem 5vw;text-align:center;}
   .services-cta h2{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(2rem,4vw,4rem);line-height:1.1;margin-top:0.8rem;margin-bottom:1.2rem;}
   .services-cta h2 em{font-style:italic;color:var(--gold);}
   .services-cta p{font-size:0.88rem;color:var(--grey);max-width:460px;margin:0 auto 2.5rem;line-height:1.85;}
@@ -210,13 +211,13 @@ page_css: |
     <div class="reveal">
       <div class="designs-img-grid">
         <div class="designs-img-item">
-           <img class="service-img-main" src="/assets/images/Dolapo.jpg" alt="Coaching & Development">
+           <img class="designs-img-main" src="/assets/images/Dolapo.jpg" alt="Coaching & Development">
         </div>
         <div class="designs-img-item">
-          <img class="service-img-main" src="/assets/images/Peter.jpg" alt="Coaching & Development">
+          <img class="designs-img-main" src="/assets/images/Peter.jpg" alt="Coaching & Development">
         </div>
-        <div class="designs-img-item"><img class="service-img-main" src="/assets/images/Preye.jpg" alt="Coaching & Development"></div>
-        <div class="designs-img-item"><img class="service-img-main" src="/assets/images/Temi.jpg" alt="Coaching & Development"></div>
+        <div class="designs-img-item"><img class="designs-img-main" src="/assets/images/Preye.jpg" alt="Coaching & Development"></div>
+        <div class="designs-img-item"><img class="designs-img-main" src="/assets/images/Temi.jpg" alt="Coaching & Development"></div>
       </div>
     </div>
   </div>
