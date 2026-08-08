@@ -34,6 +34,8 @@ page_css: |
   .form-note{font-size:0.72rem;color:var(--grey-dim);text-align:center;margin-top:0.8rem;line-height:1.65;}
   .success-msg{display:none;background:rgba(201,169,110,0.08);border:1px solid var(--border);padding:2rem;text-align:center;margin-top:1rem;}
   .success-msg p{font-size:0.88rem;color:var(--gold);line-height:1.7;}
+  .error-msg{background:rgba(180,50,50,0.08);border-color:rgba(220,80,80,0.35);}
+  .error-msg p{color:#e58b8b;}
   .webinar-cta{padding:5rem 5vw;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
   .webinar-cta-text h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.6rem,2.5vw,2.4rem);margin-top:0.8rem;margin-bottom:1rem;}
   .webinar-cta-text p{font-size:0.88rem;color:var(--grey);line-height:1.9;margin-bottom:2rem;}
@@ -47,14 +49,50 @@ page_css: |
     .form-row{grid-template-columns:1fr;}.webinar-cta{grid-template-columns:1fr;}
   }
 page_js: |
-  function handleSubmit(e) {
-    e.preventDefault();
+  async function handleSubmit(event) {
+    event.preventDefault();
+
     const form = document.getElementById('contactForm');
-    const msg = document.getElementById('successMsg');
-    if (!form || !msg) return;
-    form.querySelectorAll('input,select,textarea,button').forEach(el => el.disabled = true);
-    msg.style.display = 'block';
-    msg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const successMsg = document.getElementById('successMsg');
+    const errorMsg = document.getElementById('errorMsg');
+    const button = form.querySelector('button[type="submit"]');
+    const originalButtonText = button.textContent;
+
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+    button.disabled = true;
+    button.textContent = 'Sending...';
+
+    try {
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('Form submission failed');
+      }
+
+      form.reset();
+      successMsg.style.display = 'block';
+      successMsg.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    } catch (error) {
+      console.error('Contact form submission error:', error);
+      errorMsg.style.display = 'block';
+      errorMsg.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest'
+      });
+    } finally {
+      button.disabled = false;
+      button.textContent = originalButtonText;
+    }
   }
 ---
 
@@ -96,28 +134,31 @@ page_js: |
   </div>
   <div class="reveal">
     <span class="section-label" style="margin-bottom:1.4rem;">Send a Message</span>
-    <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xbgrddzn" method="POST" onsubmit="handleSubmit(event)">
+      <input type="hidden" name="_subject" value="New enquiry from the Mastercraft website">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
       <div class="form-row">
-        <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" placeholder="Your first name" required></div>
-        <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" placeholder="Your last name" required></div>
+        <div class="form-group"><label for="fname">First Name</label><input type="text" id="fname" name="first_name" placeholder="Your first name" autocomplete="given-name" required></div>
+        <div class="form-group"><label for="lname">Last Name</label><input type="text" id="lname" name="last_name" placeholder="Your last name" autocomplete="family-name" required></div>
       </div>
-      <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" placeholder="your@email.com" required></div>
+      <div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required></div>
       <div class="form-group">
         <label for="service">Service Interested In</label>
-        <select id="service" required>
+        <select id="service" name="service" required>
           <option value="" disabled selected>Select a service...</option>
-          <option value="coaching">Coaching & Development</option>
-          <option value="endorsement">UK Global Talent Endorsement Support</option>
-          <option value="designs">Mastercraft Designs</option>
-          <option value="academy">Music & Theatre Academy</option>
-          <option value="webinar">UK Global Talent Endorsement Webinar</option>
-          <option value="other">Other / Not Sure Yet</option>
+          <option value="Coaching &amp; Development">Coaching & Development</option>
+          <option value="UK Global Talent Endorsement Support">UK Global Talent Endorsement Support</option>
+          <option value="Mastercraft Designs">Mastercraft Designs</option>
+          <option value="Music &amp; Theatre Academy">Music & Theatre Academy</option>
+          <option value="UK Global Talent Endorsement Webinar">UK Global Talent Endorsement Webinar</option>
+          <option value="Other / Not Sure Yet">Other / Not Sure Yet</option>
         </select>
       </div>
-      <div class="form-group"><label for="message">Message</label><textarea id="message" placeholder="Tell us a little about what you're looking for..." required></textarea></div>
+      <div class="form-group"><label for="message">Message</label><textarea id="message" name="message" placeholder="Tell us a little about what you're looking for..." required></textarea></div>
       <div class="form-submit"><button type="submit" class="btn-primary">Send Message →</button></div>
       <p class="form-note">We aim to respond to all enquiries within 2 business days.</p>
-      <div class="success-msg" id="successMsg"><p>✓ Thank you for reaching out. We'll be in touch within 2 business days.</p></div>
+      <div class="success-msg" id="successMsg" role="status"><p>✓ Thank you for reaching out. We'll be in touch within 2 business days.</p></div>
+      <div class="success-msg error-msg" id="errorMsg" role="alert"><p>We couldn't send your message. Please check your connection and try again.</p></div>
     </form>
   </div>
 </section>
