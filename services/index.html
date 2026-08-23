@@ -1,0 +1,233 @@
+---
+layout: default
+title: "Services"
+description: "Coaching & Development, UK Global Talent Endorsement Support, and Mastercraft Designs — built for real outcomes."
+page_css: |
+  .service-block{padding:6rem 5vw;border-bottom:1px solid var(--border);}
+  .service-block.alt{background:var(--bg2);}
+  .service-block-inner{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:start;}
+  .service-block-inner.reverse{direction:rtl;}
+  .service-block-inner.reverse>*{direction:ltr;}
+  .service-info h2{font-family:'DM Sans',sans-serif;font-weight:400;font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.2;margin-top:0.8rem;margin-bottom:1rem;}
+  .service-info>p{font-size:0.88rem;color:var(--grey);line-height:1.9;margin-bottom:1.4rem;}
+  .service-list{list-style:none;margin-bottom:2rem;}
+  .service-list li{font-size:0.86rem;color:var(--grey);padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;gap:0.8rem;}
+  .service-list li::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .service-visual{position:relative;}
+  .service-img-main{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:top center;display:block;filter:brightness(0.82);}
+  .service-img-accent{position:absolute;bottom:-1.5rem;right:-1.5rem;width:70px;height:70px;border:2px solid var(--gold);}
+  .service-img-accent2{position:absolute;top:-1.5rem;left:-1.5rem;width:40px;height:40px;border-top:2px solid var(--gold);border-left:2px solid var(--gold);}
+  .rate-card-section{margin-top:2.5rem;}
+  .rate-card-section h4{font-family:'DM Sans',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;padding-bottom:0.6rem;border-bottom:1px solid var(--border);}
+  .rate-tiers{display:flex;flex-direction:column;gap:1px;background:var(--border);margin-bottom:2rem;}
+  .rate-tier{background:var(--bg3);padding:1.5rem 1.8rem;transition:background 0.2s;}
+  .rate-tier:hover{background:#1e1e1e;}
+  .rate-tier.featured{background:#1a1408;}
+  .rate-tier-header{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:0.7rem;flex-wrap:wrap;gap:0.5rem;}
+  .rate-tier-name{font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:var(--white);}
+  .rate-tier-price{font-family:'DM Sans',sans-serif;font-size:1.6rem;font-weight:300;color:var(--gold);line-height:1;}
+  .rate-tier-badge{font-size:0.55rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);font-weight:700;border:1px solid var(--border);padding:0.2rem 0.5rem;vertical-align:middle;margin-left:0.5rem;}
+  .rate-tier-items{list-style:none;display:flex;flex-direction:column;gap:0.35rem;}
+  .rate-tier-items li{font-size:0.77rem;color:var(--grey);display:flex;align-items:flex-start;gap:0.6rem;line-height:1.5;}
+  .rate-tier-items li::before{content:'—';color:var(--gold);flex-shrink:0;font-size:0.7rem;margin-top:0.05rem;}
+  .rate-note{font-size:0.72rem;color:var(--grey-dim);font-style:italic;margin-top:0.5rem;padding:0.8rem 1rem;background:rgba(255,255,255,0.03);border-left:2px solid var(--border);}
+  .offerings-box{background:var(--bg3);}
+  .offerings-heading{padding:1.4rem 2rem;font-size:0.65rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);border-bottom:1px solid var(--border);}
+  .offering-item{padding:1.8rem 2rem;border-bottom:1px solid var(--border);position:relative;transition:background 0.2s;}
+  .offering-item:last-child{border-bottom:none;}
+  .offering-item:hover{background:#1e1e1e;}
+  .offering-item.featured{background:#1a1408;}
+  .offering-name{font-family:'DM Sans',sans-serif;font-size:1rem;font-weight:500;color:var(--white);margin-bottom:0.45rem;}
+  .offering-desc{font-size:0.78rem;color:var(--grey);line-height:1.6;}
+  .disclaimer{font-size:0.72rem;color:var(--grey-dim);line-height:1.7;margin-top:1.5rem;padding:1.2rem;background:rgba(255,255,255,0.03);border-left:2px solid var(--border);}
+  .webinar-banner{margin-top:2.5rem;background:linear-gradient(135deg,#1a1408 0%,#120e05 100%);border:1px solid var(--gold);padding:2rem 2.2rem;}
+  .webinar-banner-label{font-size:0.6rem;letter-spacing:0.28em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.6rem;display:block;}
+  .webinar-banner h4{font-family:'DM Sans',sans-serif;font-size:1.1rem;font-weight:500;color:var(--white);margin-bottom:0.5rem;}
+  .webinar-banner p{font-size:0.8rem;color:var(--grey);line-height:1.7;margin-bottom:1.2rem;}
+  .webinar-banner a{font-size:0.66rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;text-decoration:none;color:var(--bg);background:var(--gold);padding:0.75rem 1.5rem;display:inline-block;transition:background 0.2s;}
+  .webinar-banner a:hover{background:var(--gold-light);}
+  .designs-tagline{font-size:1rem;color:var(--grey);line-height:1.8;font-style:italic;margin-bottom:1.5rem;padding-left:1rem;border-left:2px solid var(--gold);}
+  .designs-what h4{font-family:'DM Sans',sans-serif;font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;}
+  .designs-closing{font-size:0.84rem;color:var(--grey);line-height:1.8;margin-bottom:2rem;font-style:italic;}
+  .designs-ratecard{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin-bottom:2rem;}
+  .design-rate-item{background:var(--bg3);padding:1.8rem;text-align:center;}
+  .design-rate-name{font-size:0.75rem;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:var(--grey);margin-bottom:0.5rem;display:block;}
+  .design-rate-price{font-family:'DM Sans',sans-serif;font-size:2.2rem;font-weight:300;color:var(--gold);line-height:1;}
+  .designs-img-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+  .designs-img-item{aspect-ratio:1;overflow:hidden;background:var(--bg3);display:flex;align-items:center;justify-content:center;}
+  .designs-img-placeholder{font-family:'DM Sans',sans-serif;font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--grey-dim);text-align:center;padding:2rem;}
+  .designs-img-main{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center;display:block;filter:brightness(0.82);}
+  .services-cta{padding:6rem 5vw;text-align:center;}
+  .services-cta h2{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(2rem,4vw,4rem);line-height:1.1;margin-top:0.8rem;margin-bottom:1.2rem;}
+  .services-cta h2 em{font-style:italic;color:var(--gold);}
+  .services-cta p{font-size:0.88rem;color:var(--grey);max-width:460px;margin:0 auto 2.5rem;line-height:1.85;}
+  .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+  @media(max-width:960px){
+    .service-block-inner,.service-block-inner.reverse{grid-template-columns:1fr;direction:ltr;gap:3rem;}
+    .service-img-main{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:top center;}
+    .designs-img-main{width:100%;height:100%;aspect-ratio:1/1;object-fit:contain;object-position:center;}
+    .designs-img-grid{grid-template-columns:1fr;}
+    .designs-img-item{width:100%;aspect-ratio:1/1;}
+  }
+---
+
+<div class="page-hero">
+  <span class="section-label">What We Offer</span>
+  <h1>Services Built for<br><em>Real Outcomes.</em></h1>
+  <p>Three distinct service pillars — each designed with structure, precision, and a single goal: your transformation.</p>
+</div>
+
+<!-- COACHING -->
+<section class="service-block" id="coaching">
+  <div class="service-block-inner">
+    <div class="service-info reveal">
+      <span class="section-label" style="margin-bottom:0.8rem;">01</span>
+      <h2>Coaching & Development</h2>
+      <p>We offer structured, results-oriented coaching for individuals and organisations seeking real clarity, direction, and growth. Our coaching programmes are built on methodology, mindset mastery, and sustained accountability — not motivation alone.</p>
+      <ul class="service-list">
+        <li>Mastercraft Coaching Conference</li>
+        <li>1-to-1 Coaching Sessions</li>
+        <li>Group Coaching for Organisations & Teams</li>
+        <li>Guided confessions & meditative exercises</li>
+        <li>Online & In-Person Programmes</li>
+      </ul>
+      <div class="rate-card-section">
+        <h4>1:1 Coaching Packages</h4>
+        <div class="rate-tiers">
+          <div class="rate-tier">
+            <div class="rate-tier-header"><span class="rate-tier-name">Monthly Coaching</span><span class="rate-tier-price">£700</span></div>
+            <ul class="rate-tier-items">
+              <li>4 weekly sessions (1 hour each)</li>
+              <li>Guided confessions & meditative exercises</li>
+              <li>Personalised support and direction</li>
+            </ul>
+          </div>
+          <div class="rate-tier">
+            <div class="rate-tier-header"><span class="rate-tier-name">3-Month Package</span><span class="rate-tier-price">£1,500</span></div>
+            <ul class="rate-tier-items">
+              <li>6 sessions (1 hour each)</li>
+              <li>6 extra sessions based on needs or follow-up (30 mins each)</li>
+              <li>Structured guidance, accountability & confessions</li>
+            </ul>
+          </div>
+          <div class="rate-tier featured">
+            <div class="rate-tier-header">
+              <span class="rate-tier-name">6-Month Package <span class="rate-tier-badge">Best Value</span></span>
+              <span class="rate-tier-price">£3,000</span>
+            </div>
+            <ul class="rate-tier-items">
+              <li>12 sessions (1 hour each)</li>
+              <li>12 extra sessions based on needs or follow-up (30 mins each)</li>
+              <li>Deep transformational work, meditations & introspective practices</li>
+              <li>Sustained support and accountability</li>
+            </ul>
+          </div>
+        </div>
+        <h4>Group Coaching — Organisations & Teams</h4>
+        <div class="rate-tiers">
+          <div class="rate-tier">
+            <div class="rate-tier-header"><span class="rate-tier-name">One-Off Intensive Session</span><span class="rate-tier-price">£600</span></div>
+            <ul class="rate-tier-items">
+              <li>3–5 hour guided group coaching experience</li>
+              <li>Meditation and introspective sessions</li>
+              <li>Team alignment and personal reflection exercises</li>
+            </ul>
+          </div>
+        </div>
+        <p class="rate-note">All sessions are held virtually unless otherwise specified.</p>
+      </div>
+      <div style="margin-top:2rem;"><a href="/contact/" class="btn-primary">Book a Coaching Session</a></div>
+    </div>
+    <div class="service-visual reveal">
+      <img class="service-img-main" src="https://yemilaja.co.uk/photos/yemi-07.png" alt="Coaching & Development">
+      <div class="service-img-accent2"></div><div class="service-img-accent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- UK GLOBAL TALENT -->
+<section class="service-block alt" id="endorsement">
+  <div class="service-block-inner reverse">
+    <div class="service-info reveal">
+      <span class="section-label" style="margin-bottom:0.8rem;">02</span>
+      <h2>UK Global Talent Endorsement Support</h2>
+      <p>We support prospective UK Global Talent applicants in the Arts and Culture category throughout their endorsement application journey.</p>
+      <p>If you require support with your endorsement application, please reach out to us to discuss your needs and the most appropriate next steps.</p>
+      <div style="margin-top:2rem;margin-bottom:2.5rem;"><a href="/contact/" class="btn-primary">Book an Initial Consultation</a></div>
+      <div class="webinar-banner">
+        <span class="webinar-banner-label">Free Resource</span>
+        <h4>UK Global Talent Endorsement Webinar</h4>
+        <p>Join our webinar to understand the UK Global Talent Endorsement process, eligibility criteria, and how Mastercraft can support your application journey.</p>
+        <a href="https://forms.gle/YMZsn4BgxSR6rhj59" target="_blank">Join the Waitlist →</a>
+      </div>
+      <p class="disclaimer">Our services do not constitute legal advice, and endorsement outcomes cannot be guaranteed.</p>
+    </div>
+    <div class="offerings-box reveal">
+      <div class="offerings-heading">Our Support Offerings</div>
+      <div class="offering-item">
+        <div class="offering-name">Initial Consultation</div>
+        <div class="offering-desc">An initial discussion to understand your profile, support needs, and potential next steps.</div>
+      </div>
+      <div class="offering-item">
+        <div class="offering-name">Extensive Document Review</div>
+        <div class="offering-desc">A comprehensive review of your existing documentation, with feedback on structure, clarity, and refinement.</div>
+      </div>
+      <div class="offering-item">
+        <div class="offering-name">Consultation and Review</div>
+        <div class="offering-desc">Focused consultation sessions combined with detailed review and guidance on your application materials.</div>
+      </div>
+      <div class="offering-item featured">
+        <div class="offering-name">Deep-Dive Consultation Sessions and Curation of Evidence</div>
+        <div class="offering-desc">In-depth consultation and structured support to organise, refine, and present your existing evidence effectively.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MASTERCRAFT DESIGNS -->
+<section class="service-block" id="designs">
+  <div class="service-block-inner">
+    <div class="service-info reveal">
+      <span class="section-label" style="margin-bottom:0.8rem;">03</span>
+      <h2>Mastercraft Designs</h2>
+      <p class="designs-tagline">We create meaningful designs that inspire identity, purpose, and vision.</p>
+      <div class="designs-what">
+        <h4>What We Do</h4>
+        <ul class="service-list">
+          <li>Vision-led design creation</li>
+          <li>Personalised name-based word designs</li>
+          <li>Creative storytelling through visuals</li>
+          <li>Vision board designs</li>
+        </ul>
+      </div>
+      <p class="designs-closing">Our designs serve as reminders of the greatness individuals and organisations are called to embody.</p>
+      <div class="designs-ratecard">
+        <div class="design-rate-item"><span class="design-rate-name">Design Only</span><div class="design-rate-price">£60</div></div>
+        <div class="design-rate-item"><span class="design-rate-name">Framed Design</span><div class="design-rate-price">£120</div></div>
+      </div>
+      <a href="/contact/" class="btn-primary">Request a Design Consultation</a>
+    </div>
+    <div class="reveal">
+      <div class="designs-img-grid">
+        <div class="designs-img-item">
+           <img class="designs-img-main" src="/assets/images/Dolapo.jpg" alt="Coaching & Development">
+        </div>
+        <div class="designs-img-item">
+          <img class="designs-img-main" src="/assets/images/Peter.jpg" alt="Coaching & Development">
+        </div>
+        <div class="designs-img-item"><img class="designs-img-main" src="/assets/images/Preye.jpg" alt="Coaching & Development"></div>
+        <div class="designs-img-item"><img class="designs-img-main" src="/assets/images/Temi.jpg" alt="Coaching & Development"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-cta">
+  <span class="section-label reveal">Not Sure Where to Start?</span>
+  <h2 class="reveal">Let's Find the<br><em>Right Path</em> for You</h2>
+  <p class="reveal">Every journey is different. Reach out and we'll help you identify which service — or combination — is the right fit.</p>
+  <div class="cta-btns reveal">
+    <a href="/contact/" class="btn-primary">Get In Touch</a>
+    <a href="/about/" class="btn-ghost">Learn About Us</a>
+  </div>
+</section>
