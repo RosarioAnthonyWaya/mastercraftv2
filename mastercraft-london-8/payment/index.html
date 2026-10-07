@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Register — Mastercraft 8.0 in London</title><meta name="description" content="Register for Mastercraft 8.0 in London with Yemi Laja."><style>*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#090909;color:#f6f3ed;font-family:Arial,sans-serif;--bg:#090909;--bg2:#121212;--bg3:#171717;--white:#f6f3ed;--gold:#c9a96e;--grey:#bbb7b0;--grey-dim:#aaa59b;--border:#34302a}h1,h2,h3,p{margin-top:0}a{color:inherit}.nav{padding:22px 5vw;display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--border)}.nav a{text-decoration:none}.section-label{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}.btn-primary,.btn-ghost{display:inline-block;padding:16px 22px;text-decoration:none;font-size:.85rem}.btn-primary{background:var(--gold);color:#111}.btn-ghost{border:1px solid var(--border)}button:disabled{opacity:.65;cursor:wait}footer{padding:30px 5vw;color:var(--grey);font-size:.8rem}.mc8-pay-shell{min-height:78vh;padding:8rem 5vw 7rem;background:radial-gradient(circle at 12% 8%,rgba(201,169,110,.13),transparent 35%),var(--bg);}
+.mc8-pay-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.78fr) minmax(420px,1.1fr);gap:6rem;align-items:start;}
+.mc8-pay-summary{position:sticky;top:7rem;}
+.mc8-pay-edition{display:inline-flex;gap:.55rem;align-items:center;margin-bottom:1.5rem;padding:.45rem .7rem;border:1px solid var(--border);font-size:.58rem;letter-spacing:.19em;text-transform:uppercase;color:var(--grey);}
+.mc8-pay-edition strong{padding:.16rem .38rem;background:#d8333d;color:#fff;}
+.mc8-pay-summary h1{margin:.8rem 0 1.2rem;font-family:'DM Sans',sans-serif;font-size:clamp(2.6rem,4.5vw,4.6rem);font-weight:300;line-height:1;letter-spacing:-.04em;}
+.mc8-pay-summary h1 em{display:block;font-family:Georgia,'Times New Roman',serif;font-weight:400;color:var(--gold);}
+.mc8-pay-summary>p{margin-bottom:2rem;color:var(--grey);font-size:.88rem;line-height:1.85;}
+.mc8-mini-details{border-top:1px solid var(--border);}
+.mc8-mini-detail{display:grid;grid-template-columns:86px 1fr;gap:1rem;padding:1rem 0;border-bottom:1px solid var(--border);}
+.mc8-mini-detail span{font-size:.58rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+.mc8-mini-detail strong{font-size:.83rem;font-weight:500;color:var(--white);}
+.mc8-pay-card{padding:2.8rem;background:var(--bg2);border:1px solid var(--border);box-shadow:0 24px 80px rgba(0,0,0,.22);}
+.mc8-pay-card-head{display:flex;justify-content:space-between;gap:1.5rem;align-items:start;margin-bottom:2.2rem;padding-bottom:1.7rem;border-bottom:1px solid var(--border);}
+.mc8-pay-card-head h2{margin:0 0 .45rem;font-family:'DM Sans',sans-serif;font-size:1.55rem;font-weight:400;color:var(--white);}
+.mc8-pay-card-head p{font-size:.76rem;line-height:1.65;color:var(--grey);}
+.mc8-price{text-align:right;white-space:nowrap;}
+.mc8-price strong{display:block;font-family:'DM Sans',sans-serif;font-size:1.8rem;font-weight:300;color:var(--gold);}
+.mc8-price span{font-size:.55rem;letter-spacing:.15em;text-transform:uppercase;color:var(--grey-dim);}
+.mc8-reg-form{display:flex;flex-direction:column;gap:1.25rem;}
+.mc8-form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;}
+.mc8-form-group{display:flex;flex-direction:column;gap:.5rem;}
+.mc8-form-group label{font-size:.58rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase;color:var(--grey-dim);}
+.mc8-form-group input,.mc8-form-group select{width:100%;padding:1rem 1.1rem;background:var(--bg3);border:1px solid rgba(255,255,255,.1);outline:none;color:var(--white);font:inherit;font-size:.86rem;transition:border-color .2s;}
+.mc8-form-group input:focus,.mc8-form-group select:focus{border-color:var(--gold);}
+.mc8-form-group input::placeholder{color:var(--grey-dim);}
+.mc8-form-group select{appearance:none;cursor:pointer;}
+.mc8-consent{display:flex;gap:.75rem;align-items:flex-start;color:var(--grey);font-size:.72rem;line-height:1.6;}
+.mc8-consent input{width:15px;height:15px;margin-top:.18rem;accent-color:var(--gold);}
+.mc8-reg-form button{width:100%;border:0;cursor:pointer;font-family:'Manrope',sans-serif;}
+.mc8-secure{display:flex;justify-content:center;align-items:center;gap:.5rem;font-size:.62rem;color:var(--grey-dim);text-align:center;}
+.mc8-secure svg{width:13px;height:13px;stroke:var(--gold);fill:none;}
+.mc8-form-status{display:none;padding:1rem 1.2rem;border:1px solid var(--border);font-size:.78rem;line-height:1.65;text-align:center;}
+.mc8-form-status.success{display:block;background:rgba(201,169,110,.08);color:var(--gold);}
+.mc8-form-status.error{display:block;background:rgba(180,50,50,.08);border-color:rgba(220,80,80,.35);color:#e58b8b;}
+.mc8-coming-soon{margin-top:1.3rem;padding:1rem 1.2rem;background:rgba(255,255,255,.025);border-left:2px solid var(--gold);font-size:.72rem;line-height:1.7;color:var(--grey);}
+@media(max-width:960px){
+  .mc8-pay-grid{grid-template-columns:1fr;gap:3rem;}
+  .mc8-pay-summary{position:static;}
+}
+@media(max-width:560px){
+  .mc8-pay-shell{padding-top:6.5rem;}
+  .mc8-pay-card{padding:1.5rem;}
+  .mc8-pay-card-head{flex-direction:column;}
+  .mc8-price{text-align:left;}
+  .mc8-form-row{grid-template-columns:1fr;}
+}
+</style></head><body><nav class="nav"><a href="index.html">Mastercraft 8.0</a><a href="payment.html">Tickets →</a></nav><main>
+
+<section class="mc8-pay-shell">
+  <div class="mc8-pay-grid">
+    <div class="mc8-pay-summary reveal">
+      <div class="mc8-pay-edition">Mastercraft <strong>8.0</strong> in London</div>
+      <span class="section-label">Registration</span>
+      <h1>The Hope of <em>Your Calling</em></h1>
+      <p>Choose your ticket and enter your details. All tickets include the 3-hour coaching experience and 7-day post-event reflection journey via email.</p>
+      <div class="mc8-mini-details">
+        <div class="mc8-mini-detail"><span>Date</span><strong>Saturday, 14 November 2026</strong></div>
+        <div class="mc8-mini-detail"><span>Time</span><strong>11:00 AM</strong></div>
+        <div class="mc8-mini-detail"><span>Venue</span><strong>Apex City London</strong></div>
+        <div class="mc8-mini-detail"><span>Host</span><strong>Yemi Laja · Transformational Coach</strong></div>
+      </div>
+    </div>
+
+    <div class="mc8-pay-card reveal">
+      <div class="mc8-pay-card-head">
+        <div><h2>Reserve your place</h2><p>Early bird £110 · Standard £130 · Late payment £140.</p></div>
+        <div class="mc8-price"><strong id="ticketPrice">£130</strong><span>per person</span></div>
+      </div>
+
+      <form class="mc8-reg-form" action="https://formspree.io/f/xbgrddzn" method="POST" onsubmit="submitMastercraftRegistration(event)">
+        <input type="hidden" name="_subject" value="Mastercraft 8.0 London — Booking Enquiry">
+        <input type="hidden" name="event" value="Mastercraft 8.0 in London — The Hope of Your Calling">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
+
+        <div class="mc8-form-row">
+          <div class="mc8-form-group"><label for="mc8-first-name">First name</label><input id="mc8-first-name" name="first_name" type="text" autocomplete="given-name" placeholder="Your first name" required></div>
+          <div class="mc8-form-group"><label for="mc8-last-name">Last name</label><input id="mc8-last-name" name="last_name" type="text" autocomplete="family-name" placeholder="Your last name" required></div>
+        </div>
+        <div class="mc8-form-group"><label for="mc8-email">Email address</label><input id="mc8-email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required></div>
+        <div class="mc8-form-group"><label for="mc8-phone">Phone number</label><input id="mc8-phone" name="phone" type="tel" autocomplete="tel" placeholder="Include country code" required></div>
+        <div class="mc8-form-group"><label for="mc8-ticket">Ticket type</label><select id="mc8-ticket" name="ticket_type" onchange="updateMastercraftTicket()" required><option value="early" disabled>Early bird — £110 (first two people; subject to availability)</option><option value="standard" selected>Standard — £130</option><option value="late" disabled>Late payment — £140</option></select></div>
+        <input type="hidden" id="ticketAmount" name="amount_gbp" value="130">
+        <input type="hidden" name="number_of_places" value="1">
+        <label class="mc8-consent"><input type="checkbox" name="event_updates_consent" value="yes" required><span>I agree to receive booking communications and the included 7-day reflection emails relating to Mastercraft 8.0 in London.</span></label>
+        <button id="paymentButton" type="submit" class="btn-primary">Request Booking Details →</button>
+        <div id="registrationStatus" class="mc8-form-status" role="status" aria-live="polite"></div>
+        <div class="mc8-secure"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg><span>Card details are entered only on Stripe when checkout is available.</span></div>
+      </form>
+
+      <div id="paymentNotice" class="mc8-coming-soon" aria-live="polite">Online payment is not open yet. Submit your details to request booking information. This does not reserve a place.</div>
+    </div>
+  </div>
+</section>
+</main><footer>Mastercraft 8.0 · Yemi Laja · 14 November 2026 · Apex City London</footer><script>// Paste the three event-specific Stripe Payment Links below.
+// Stripe must enforce the early-bird limit; the browser cannot reserve stock.
+const MC8_TICKETS = {
+  early: { label: 'Early bird — first two people', price: 110, link: '', enabled: false },
+  standard: { label: 'Standard', price: 130, link: '', enabled: true },
+  late: { label: 'Late payment', price: 140, link: '', enabled: false }
+};
+
+function updateMastercraftTicket() {
+  const select = document.getElementById('mc8-ticket');
+  for (const option of select.options) option.disabled = !MC8_TICKETS[option.value].enabled;
+  if (!MC8_TICKETS[select.value].enabled) select.value = 'standard';
+  const ticket = MC8_TICKETS[select.value];
+  const configured = /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9_]+$/.test(ticket.link);
+  document.getElementById('ticketPrice').textContent = '£' + ticket.price;
+  document.getElementById('ticketAmount').value = ticket.price;
+  document.getElementById('paymentButton').textContent = configured ? 'Continue to Secure Payment →' : 'Request Booking Details →';
+  document.getElementById('paymentNotice').textContent = configured
+    ? 'Payment is completed securely through Stripe. Your place is confirmed only after successful payment.'
+    : 'Online payment is not open for this ticket yet. Submit your details to request booking information. This does not reserve a place.';
+}
+
+async function submitMastercraftRegistration(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const button = document.getElementById('paymentButton');
+  const status = document.getElementById('registrationStatus');
+  const ticket = { ...MC8_TICKETS[document.getElementById('mc8-ticket').value] };
+  if (!ticket.enabled) return;
+  const configured = /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9_]+$/.test(ticket.link);
+  const originalText = button.textContent;
+  status.className = 'mc8-form-status';
+  button.disabled = true;
+  button.textContent = 'Submitting your details...';
+  try {
+    const data = new FormData(form);
+    data.set('ticket_label', ticket.label);
+    data.set('amount_gbp', ticket.price);
+    data.set('payment_status', 'Not paid — registration enquiry only');
+    const response = await fetch(form.action, {method: 'POST', body: data, headers: {'Accept': 'application/json'}});
+    if (!response.ok) throw new Error('Registration failed');
+    status.className = 'mc8-form-status success';
+    if (configured) {
+      status.textContent = 'Details submitted. Taking you to secure payment...';
+      const url = new URL(ticket.link);
+      url.searchParams.set('prefilled_email', data.get('email'));
+      window.location.assign(url.href);
+    } else {
+      status.textContent = 'Your enquiry has been submitted. Payment is still required to confirm your place.';
+    }
+  } catch (error) {
+    status.className = 'mc8-form-status error';
+    status.textContent = 'We could not submit your details. Please check your connection and try again.';
+  } finally {
+    button.disabled = false;
+    button.textContent = originalText;
+  }
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', updateMastercraftTicket);
+else updateMastercraftTicket();
+</script></body></html>
