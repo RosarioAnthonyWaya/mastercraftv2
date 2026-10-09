@@ -4,6 +4,17 @@ title: "Register — Mastercraft 8.0 in London"
 description: "Register for Mastercraft 8.0 in London with Yemi Laja."
 permalink: /mastercraft-london-8/payment/
 page_css: |
+  
+  .mc8-booking{max-width:850px;margin:2rem auto 0;text-align:left;}
+  .mc8-booking-intro{color:var(--grey);font-size:.9rem;line-height:1.8;}
+  .mc8-ms-form{display:block;width:100%;height:1120px;border:0;background:#fff;border-radius:4px;}
+  .mc8-form-fallback{margin:1rem 0!important;font-size:.8rem!important;}
+  .mc8-payment-step{margin-top:1.5rem;padding:1.5rem;border:1px solid var(--gold);background:rgba(201,169,110,.08);}
+  .mc8-payment-step h3{font-size:1.3rem;margin:0 0 .7rem;}
+  .mc8-payment-step p{margin:0 0 1rem!important;line-height:1.8;color:var(--grey);}
+  .mc8-payment-step .btn-primary{display:block;text-align:center;font-weight:700;}
+  .mc8-payment-step small{display:block;margin-top:1rem;color:var(--grey);line-height:1.7;}
+  @media(max-width:560px){.mc8-ms-form{height:1320px;}.mc8-payment-step{padding:1.1rem;}}
   .mc8-pay-shell{min-height:78vh;padding:8rem 5vw 7rem;background:radial-gradient(circle at 12% 8%,rgba(201,169,110,.13),transparent 35%),var(--bg);}
   .mc8-pay-grid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(0,.78fr) minmax(420px,1.1fr);gap:6rem;align-items:start;}
   .mc8-pay-summary{position:sticky;top:7rem;}
@@ -51,68 +62,6 @@ page_css: |
     .mc8-price{text-align:left;}
     .mc8-form-row{grid-template-columns:1fr;}
   }
-page_js: |
-  // Paste the three event-specific Stripe Payment Links below.
-  // Stripe must enforce the early-bird limit; the browser cannot reserve stock.
-  const MC8_TICKETS = {
-    early: { label: 'Early bird — first two people', price: 110, link: '', enabled: false },
-    standard: { label: 'Standard', price: 130, link: '', enabled: true },
-    late: { label: 'Late payment', price: 140, link: '', enabled: false }
-  };
-  
-  function updateMastercraftTicket() {
-    const select = document.getElementById('mc8-ticket');
-    for (const option of select.options) option.disabled = !MC8_TICKETS[option.value].enabled;
-    if (!MC8_TICKETS[select.value].enabled) select.value = 'standard';
-    const ticket = MC8_TICKETS[select.value];
-    const configured = /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9_]+$/.test(ticket.link);
-    document.getElementById('ticketPrice').textContent = '£' + ticket.price;
-    document.getElementById('ticketAmount').value = ticket.price;
-    document.getElementById('paymentButton').textContent = configured ? 'Continue to Secure Payment →' : 'Request Booking Details →';
-    document.getElementById('paymentNotice').textContent = configured
-      ? 'Payment is completed securely through Stripe. Your place is confirmed only after successful payment.'
-      : 'Online payment is not open for this ticket yet. Submit your details to request booking information. This does not reserve a place.';
-  }
-  
-  async function submitMastercraftRegistration(event) {
-    event.preventDefault();
-    const form = event.currentTarget;
-    const button = document.getElementById('paymentButton');
-    const status = document.getElementById('registrationStatus');
-    const ticket = { ...MC8_TICKETS[document.getElementById('mc8-ticket').value] };
-    if (!ticket.enabled) return;
-    const configured = /^https:\/\/buy\.stripe\.com\/[A-Za-z0-9_]+$/.test(ticket.link);
-    const originalText = button.textContent;
-    status.className = 'mc8-form-status';
-    button.disabled = true;
-    button.textContent = 'Submitting your details...';
-    try {
-      const data = new FormData(form);
-      data.set('ticket_label', ticket.label);
-      data.set('amount_gbp', ticket.price);
-      data.set('payment_status', 'Not paid — registration enquiry only');
-      const response = await fetch(form.action, {method: 'POST', body: data, headers: {'Accept': 'application/json'}});
-      if (!response.ok) throw new Error('Registration failed');
-      status.className = 'mc8-form-status success';
-      if (configured) {
-        status.textContent = 'Details submitted. Taking you to secure payment...';
-        const url = new URL(ticket.link);
-        url.searchParams.set('prefilled_email', data.get('email'));
-        window.location.assign(url.href);
-      } else {
-        status.textContent = 'Your enquiry has been submitted. Payment is still required to confirm your place.';
-      }
-    } catch (error) {
-      status.className = 'mc8-form-status error';
-      status.textContent = 'We could not submit your details. Please check your connection and try again.';
-    } finally {
-      button.disabled = false;
-      button.textContent = originalText;
-    }
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', updateMastercraftTicket);
-  else updateMastercraftTicket();
-
 ---
 
 <section class="mc8-pay-shell">
@@ -121,7 +70,7 @@ page_js: |
       <div class="mc8-pay-edition">Mastercraft <strong>8.0</strong> in London</div>
       <span class="section-label">Registration</span>
       <h1>The Hope of <em>Your Calling</em></h1>
-      <p>Choose your ticket and enter your details. All tickets include the 3-hour coaching experience and 7-day post-event reflection journey via email.</p>
+      <p>Submit your registration, then pay immediately using the Pay now button below. All tickets include the 3-hour coaching experience and 7-day post-event reflection journey via email.</p>
       <div class="mc8-mini-details">
         <div class="mc8-mini-detail"><span>Date</span><strong>Saturday, 14 November 2026</strong></div>
         <div class="mc8-mini-detail"><span>Time</span><strong>11:00 AM</strong></div>
@@ -132,31 +81,21 @@ page_js: |
 
     <div class="mc8-pay-card reveal">
       <div class="mc8-pay-card-head">
-        <div><h2>Reserve your place</h2><p>Early bird £110 · Standard £130 · Late payment £140.</p></div>
-        <div class="mc8-price"><strong id="ticketPrice">£130</strong><span>per person</span></div>
+        <div><h2>Register and pay now</h2><p>Early bird £110 · Standard £130 · Late payment £140.</p></div>
+        <div class="mc8-price"><strong>Stripe</strong><span>secure checkout</span></div>
       </div>
 
-      <form class="mc8-reg-form" action="https://formspree.io/f/mppqpzdg" method="POST" onsubmit="submitMastercraftRegistration(event)">
-        <input type="hidden" name="_subject" value="Mastercraft 8.0 London — Booking Enquiry">
-        <input type="hidden" name="event" value="Mastercraft 8.0 in London — The Hope of Your Calling">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
-
-        <div class="mc8-form-row">
-          <div class="mc8-form-group"><label for="mc8-first-name">First name</label><input id="mc8-first-name" name="first_name" type="text" autocomplete="given-name" placeholder="Your first name" required></div>
-          <div class="mc8-form-group"><label for="mc8-last-name">Last name</label><input id="mc8-last-name" name="last_name" type="text" autocomplete="family-name" placeholder="Your last name" required></div>
+      <div class="mc8-booking">
+        <p class="mc8-booking-intro"><strong>1. Complete and submit your registration below.</strong><br>Then click <strong>Pay now</strong> immediately to complete your payment securely through Stripe. You do not need to wait for an email.</p>
+        <iframe class="mc8-ms-form" title="Mastercraft UK Edition 8 registration form" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=dfownavQaEa86ktuoBnyCBc172zQpeVLtVONFAooQWNUQ1FQMTJaUU1DVTlMVktDNDZRU0JPOVpMWi4u&amp;embed=true" allowfullscreen></iframe>
+        <p class="mc8-form-fallback">Having trouble with the form? <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=dfownavQaEa86ktuoBnyCBc172zQpeVLtVONFAooQWNUQ1FQMTJaUU1DVTlMVktDNDZRU0JPOVpMWi4u" target="_blank" rel="noopener">Open the registration form in a new tab</a>, then return here to pay.</p>
+        <div class="mc8-payment-step" id="pay-now">
+          <h3>2. Submitted your form? Pay now.</h3>
+          <p>Complete your payment immediately to confirm your place. Use the same email address for registration and checkout.</p>
+          <a class="btn-primary" href="https://book.stripe.com/eVqfZjcxe8Hta8d24h4ow00">Pay now →</a>
+          <small>Payment is completed on Stripe. Your registration alone does not confirm a paid booking. Check the ticket, amount and number of places on Stripe before paying.</small>
         </div>
-        <div class="mc8-form-group"><label for="mc8-email">Email address</label><input id="mc8-email" name="email" type="email" autocomplete="email" placeholder="your@email.com" required></div>
-        <div class="mc8-form-group"><label for="mc8-phone">Phone number</label><input id="mc8-phone" name="phone" type="tel" autocomplete="tel" placeholder="Include country code" required></div>
-        <div class="mc8-form-group"><label for="mc8-ticket">Ticket type</label><select id="mc8-ticket" name="ticket_type" onchange="updateMastercraftTicket()" required><option value="early" disabled>Early bird — £110 (first two people; subject to availability)</option><option value="standard" selected>Standard — £130</option><option value="late" disabled>Late payment — £140</option></select></div>
-        <input type="hidden" id="ticketAmount" name="amount_gbp" value="130">
-        <input type="hidden" name="number_of_places" value="1">
-        <label class="mc8-consent"><input type="checkbox" name="event_updates_consent" value="yes" required><span>I agree to receive booking communications and the included 7-day reflection emails relating to Mastercraft 8.0 in London.</span></label>
-        <button id="paymentButton" type="submit" class="btn-primary">Request Booking Details →</button>
-        <div id="registrationStatus" class="mc8-form-status" role="status" aria-live="polite"></div>
-        <div class="mc8-secure"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"></rect><path d="M8 10V7a4 4 0 018 0v3"></path></svg><span>Card details are entered only on Stripe when checkout is available.</span></div>
-      </form>
-
-      <div id="paymentNotice" class="mc8-coming-soon" aria-live="polite">Online payment is not open yet. Submit your details to request booking information. This does not reserve a place.</div>
+      </div>
     </div>
   </div>
 </section>
