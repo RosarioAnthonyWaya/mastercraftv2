@@ -4,6 +4,17 @@ title: "Mastercraft 8.0 in London"
 description: "Mastercraft 8.0 in London — The Hope of Your Calling, hosted by transformational coach Yemi Laja on Saturday 14 November at 11:00 AM."
 permalink: /mastercraft-london-8/
 page_css: |
+  
+  .mc8-booking{max-width:850px;margin:2rem auto 0;text-align:left;}
+  .mc8-booking-intro{color:var(--grey);font-size:.9rem;line-height:1.8;}
+  .mc8-ms-form{display:block;width:100%;height:1120px;border:0;background:#fff;border-radius:4px;}
+  .mc8-form-fallback{margin:1rem 0!important;font-size:.8rem!important;}
+  .mc8-payment-step{margin-top:1.5rem;padding:1.5rem;border:1px solid var(--gold);background:rgba(201,169,110,.08);}
+  .mc8-payment-step h3{font-size:1.3rem;margin:0 0 .7rem;}
+  .mc8-payment-step p{margin:0 0 1rem!important;line-height:1.8;color:var(--grey);}
+  .mc8-payment-step .btn-primary{display:block;text-align:center;font-weight:700;}
+  .mc8-payment-step small{display:block;margin-top:1rem;color:var(--grey);line-height:1.7;}
+  @media(max-width:560px){.mc8-ms-form{height:1320px;}.mc8-payment-step{padding:1.1rem;}}
   .mc8-hero{position:relative;min-height:82vh;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(340px,.75fr);align-items:stretch;overflow:hidden;background:radial-gradient(circle at 20% 10%,rgba(201,169,110,.13),transparent 36%),linear-gradient(135deg,#121212 0%,#090909 65%,#151006 100%);border-bottom:1px solid var(--border);}
   .mc8-hero-copy{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:8rem 5vw 6rem;}
   .mc8-kicker{display:flex;align-items:center;gap:.8rem;margin-bottom:1.7rem;font-size:.62rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);}
@@ -89,7 +100,7 @@ page_css: |
     <h1>The Hope of <em>Your Calling</em></h1>
     <p class="mc8-lead">A transformational Mastercraft gathering for people ready to reconnect with purpose, renew their hope, and move forward with greater clarity.</p>
     <div class="mc8-hero-actions">
-      <a href="/mastercraft-london-8/payment/" class="btn-primary">View Tickets →</a>
+      <a href="#registration" class="btn-primary">Register &amp; Pay Now →</a>
       <a href="#event-details" class="btn-ghost">View Event Details</a>
     </div>
   </div>
@@ -141,16 +152,26 @@ page_css: |
     <span class="mc8-host-role">Transformational Coach</span>
     <p>Yemi Laja hosts Mastercraft 8.0 in London, bringing a transformational coaching approach centred on clarity, identity, purpose, and intentional growth.</p>
     <p>Join her for an experience created to help you look inward honestly, recognise what is calling you forward, and respond with courage.</p>
-    <a href="/mastercraft-london-8/payment/" class="btn-primary">Reserve Your Place →</a>
+    <a href="#registration" class="btn-primary">Register &amp; Pay Now →</a>
   </div>
 </section>
 
-<section class="mc8-register">
+<section class="mc8-register" id="registration">
   <div class="mc8-register-inner reveal">
     <span class="section-label">Mastercraft 8.0 · London</span>
     <h2>Your calling still has <em>a future.</em></h2>
     <div class="mc8-register-meta"><span>Saturday 14 November 2026</span><span>11:00 AM</span><span>Apex City London</span></div>
     <p>Early bird: £110 for the first two people. Standard: £130. Late payment: £140. All tickets include the full coaching experience and the 7-day reflection journey via email.</p>
-    <a href="/mastercraft-london-8/payment/" class="btn-primary">View Tickets →</a>
+    <div class="mc8-booking">
+        <p class="mc8-booking-intro"><strong>1. Complete and submit your registration below.</strong><br>Then click <strong>Pay now</strong> immediately to complete your payment securely through Stripe. You do not need to wait for an email.</p>
+        <iframe class="mc8-ms-form" title="Mastercraft UK Edition 8 registration form" src="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=dfownavQaEa86ktuoBnyCBc172zQpeVLtVONFAooQWNUQ1FQMTJaUU1DVTlMVktDNDZRU0JPOVpMWi4u&amp;embed=true" allowfullscreen></iframe>
+        <p class="mc8-form-fallback">Having trouble with the form? <a href="https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=dfownavQaEa86ktuoBnyCBc172zQpeVLtVONFAooQWNUQ1FQMTJaUU1DVTlMVktDNDZRU0JPOVpMWi4u" target="_blank" rel="noopener">Open the registration form in a new tab</a>, then return here to pay.</p>
+        <div class="mc8-payment-step" id="pay-now">
+          <h3>2. Submitted your form? Pay now.</h3>
+          <p>Complete your payment immediately to confirm your place. Use the same email address for registration and checkout.</p>
+          <a class="btn-primary" href="https://book.stripe.com/eVqfZjcxe8Hta8d24h4ow00">Pay now →</a>
+          <small>Payment is completed on Stripe. Your registration alone does not confirm a paid booking. Check the ticket, amount and number of places on Stripe before paying.</small>
+        </div>
+      </div>
   </div>
 </section>
